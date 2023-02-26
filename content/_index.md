@@ -105,37 +105,37 @@ sections:
           description: Taught electronic engineering and researched semiconductor physics.
     design:
       columns: '2'
-  - block: experience
-    content:
-      title: Education
-      # Date format for experience
-      #   Refer to https://wowchemy.com/docs/customization/#date-format
-      date_format: Jan 2006
-      # Experiences.
-      #   Add/remove as many `experience` items below as you like.
-      #   Required fields are `title`, `company`, and `date_start`.
-      #   Leave `date_end` empty if it's your current employer.
-      #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
-      items:
-        - title: BsC Computer Science
-          company: University of Southamton
-          company_url: ''
-          company_logo: university-of-southampton
-          location: Southampton
-          date_start: '2019-10-01'
-          date_end: ''
-          description: Helping students with first year programming modules in their labs, as well as in the third year Game Design course
-
-        - title: Android Developer - Intern
-          company: University of Southamton
-          company_url: ''
-          company_logo: university-of-southampton
-          location: Southampton
-          date_start: '2018-07-01'
-          date_end: '2018-09-30'
-          description: Taught electronic engineering and researched semiconductor physics.
-    design:
-      columns: '2'
+ # - block: experience
+ #   content:
+ #     title: Education
+ #     # Date format for experience
+ #     #   Refer to https://wowchemy.com/docs/customization/#date-format
+ #     date_format: Jan 2006
+ #     # Experiences.
+ #     #   Add/remove as many `experience` items below as you like.
+ #     #   Required fields are `title`, `company`, and `date_start`.
+ #     #   Leave `date_end` empty if it's your current employer.
+ #     #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
+ #     items:
+ #       - title: BsC Computer Science
+ #         company: University of Southamton
+ #         company_url: ''
+ #         company_logo: university-of-southampton
+ #         location: Southampton
+ #         date_start: '2019-10-01'
+ #         date_end: ''
+ #         description: Helping students with first year programming modules in their labs, as well as in the third year Game Design course
+#
+ #       - title: Android Developer - Intern
+ #         company: University of Southamton
+ #         company_url: ''
+ #         company_logo: university-of-southampton
+ #         location: Southampton
+ #         date_start: '2018-07-01'
+ #         date_end: '2018-09-30'
+ #         description: Taught electronic engineering and researched semiconductor physics.
+ #   design:
+ #     columns: '2'
  # - block: accomplishments
  #   content:
  #     # Note: `&shy;` is used to add a 'soft' hyphen in a long heading.
