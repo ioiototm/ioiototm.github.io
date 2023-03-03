@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Unity | Yoan-Daniel Malinov</title><link>https://ioiototm.github.io/tag/unity/</link><atom:link href="https://ioiototm.github.io/tag/unity/index.xml" rel="self" type="application/rss+xml"/><description>Unity</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-gb</language><lastBuildDate>Thu, 16 May 2019 00:00:00 +0000</lastBuildDate><image><url>https://ioiototm.github.io/media/icon_hud54f24fa7f0dc93e78712e45d8f7af8d_219185_512x512_fill_lanczos_center_3.png</url><title>Unity</title><link>https://ioiototm.github.io/tag/unity/</link></image><item><title>008: VR Extravaganza</title><link>https://ioiototm.github.io/project/games/comp3218/008-vr-extravaganza/</link><pubDate>Thu, 16 May 2019 00:00:00 +0000</pubDate><guid>https://ioiototm.github.io/project/games/comp3218/008-vr-extravaganza/</guid><description>&lt;p>This is one of my favourite games that I made, mostly for the fact that it uses a real voice actor and he did an amazing job with that (check him out &lt;a href="https://www.fiverr.com/share/4Yj1mm" target="_blank" rel="noopener">here&lt;/a>). It was created solely by me, and is inspired by games like &amp;ldquo;I Expect You To Die&amp;rdquo; and &amp;ldquo;The Stanley Parable&amp;rdquo; - the voice you hear in your ear is supposed to be the thing that agents hear when they&amp;rsquo;re on a mission.&lt;/p>
+&lt;p>The mechanic itself, slowing down time and being shot by bullets is close to what &amp;ldquo;Super Hot&amp;rdquo; does, but I went for a more controlled slow down by pressing a button and having limited time to do that. You have to take bullets that you&amp;rsquo;ve frozen in time and try to make the shoot the targets.
+To download it an try it (it&amp;rsquo;s only for VR and it&amp;rsquo;s tested only on the Vive controllers), check out &lt;a href="https://ioiototm.itch.io/008-vr-extravaganza" target="_blank" rel="noopener">https://ioiototm.itch.io/008-vr-extravaganza&lt;/a>, where there&amp;rsquo;s also a link to a video of the game being played.&lt;/p></description></item><item><title>Bingo Bongo</title><link>https://ioiototm.github.io/project/games/comp3218/bingo-bongo/</link><pubDate>Thu, 07 Mar 2019 00:00:00 +0000</pubDate><guid>https://ioiototm.github.io/project/games/comp3218/bingo-bongo/</guid><description>&lt;p>This game is a local co-op multiplayer in the theme of Ying-Yang (hence the name). It was created by my friend and me for the first coursework, &amp;ldquo;Tutorial&amp;rdquo;. It&amp;rsquo;s supposed to be played by two people on the same keyboard, and each player controls either the white or black rectangle, which have special abilities that have to be used to help the other player complete the level.&lt;/p>
+&lt;p>You can download the game and check some more screenshot on my itch.io page for the game at &lt;a href="https://ioiototm.itch.io/bingo-bongo" target="_blank" rel="noopener">https://ioiototm.itch.io/bingo-bongo&lt;/a>.&lt;/p></description></item><item><title>StuckInSpace</title><link>https://ioiototm.github.io/project/games/research/stuckinspace/</link><pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate><guid>https://ioiototm.github.io/project/games/research/stuckinspace/</guid><description>&lt;p>I created this game for my research into multi-modality and co-presence in VR - it&amp;rsquo;s heavily inspired by games such as &amp;ldquo;Keep Talking and Nobody Explodes&amp;rdquo;, where the two players have to help eachother defuse a bomb.&lt;/p>
+&lt;p>StuckInSpace is a two player co-op game where the VR player and the second non-VR player have to help eachother to fix the spaceship. The second player can either use a PC (the normal way) or a smartphone through a novel approach using one of the HTC Vive controllers that sends information about the exact position in VR space to the phone and then renders it like a &amp;ldquo;window&amp;rdquo; into the VR world.&lt;/p>
+&lt;p>Currently there is no way to download the game as I am still working on it, but you can see some screenshots of the game and the hardware setup below:&lt;/p>
+&lt;!--![The VR player is in the cockpit of the spaceship and has to fix the spaceship while the second player is in the control room and has to help him.](PhoneHolder.png)-->
+&lt;p>
+&lt;script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous">&lt;/script>
+&lt;script src=https://ioiototm.github.io/js/load-photoswipe.js>&lt;/script>
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous">&lt;/script>
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous">&lt;/script>
+&lt;div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+&lt;div class="pswp__bg">&lt;/div>
+&lt;div class="pswp__scroll-wrap">
+&lt;div class="pswp__container">
+&lt;div class="pswp__item">&lt;/div>
+&lt;div class="pswp__item">&lt;/div>
+&lt;div class="pswp__item">&lt;/div>
+&lt;/div>
+&lt;div class="pswp__ui pswp__ui--hidden">
+&lt;div class="pswp__top-bar">
+&lt;div class="pswp__counter">&lt;/div>
+&lt;button class="pswp__button pswp__button--close" title="Close (Esc)">&lt;/button>
+&lt;button class="pswp__button pswp__button--share" title="Share">&lt;/button>
+&lt;button class="pswp__button pswp__button--fs" title="Toggle fullscreen">&lt;/button>
+&lt;button class="pswp__button pswp__button--zoom" title="Zoom in/out">&lt;/button>
+&lt;div class="pswp__preloader">
+&lt;div class="pswp__preloader__icn">
+&lt;div class="pswp__preloader__cut">
+&lt;div class="pswp__preloader__donut">&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+&lt;div class="pswp__share-tooltip">&lt;/div>
+&lt;/div>
+&lt;button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+&lt;/button>
+&lt;button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+&lt;/button>
+&lt;div class="pswp__caption">
+&lt;div class="pswp__caption__center">&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
+&lt;link rel="stylesheet" href=https://ioiototm.github.io/css/hugo-easy-gallery.css />
+&lt;div class="box" >
+&lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+&lt;div class="img" style="background-image: url('/project/games/research/StuckInSpace/whatDroneSees.png');">
+&lt;img itemprop="thumbnail" src="https://ioiototm.github.io/project/games/research/StuckInSpace/whatDroneSees.png" alt="A screenshot of what the drone sees (the VR headset and controller are the astronaut helmet and glove)"/>
+&lt;/div>
+&lt;a href="https://ioiototm.github.io/project/games/research/StuckInSpace/whatDroneSees.png" itemprop="contentUrl">&lt;/a>
+&lt;/figure>
+&lt;/div>
+&lt;div class="box" >
+&lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+&lt;div class="img" style="background-image: url('/project/games/research/StuckInSpace/whatVRSees.png');">
+&lt;img itemprop="thumbnail" src="https://ioiototm.github.io/project/games/research/StuckInSpace/whatVRSees.png" alt="A screenshot of what the VR player sees (a small drone)"/>
+&lt;/div>
+&lt;a href="https://ioiototm.github.io/project/games/research/StuckInSpace/whatVRSees.png" itemprop="contentUrl">&lt;/a>
+&lt;/figure>
+&lt;/div>
+&lt;div class="box" >
+&lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+&lt;div class="img" style="background-image: url('/project/games/research/StuckInSpace/PhoneHolderFull.png');">
+&lt;img itemprop="thumbnail" src="https://ioiototm.github.io/project/games/research/StuckInSpace/PhoneHolderFull.png" alt="A photo of the phone holder on the controller"/>
+&lt;/div>
+&lt;a href="https://ioiototm.github.io/project/games/research/StuckInSpace/PhoneHolderFull.png" itemprop="contentUrl">&lt;/a>
+&lt;/figure>
+&lt;/div>
+&lt;div class="box" >
+&lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+&lt;div class="img" style="background-image: url('/project/games/research/StuckInSpace/PhoneHolder.png');">
+&lt;img itemprop="thumbnail" src="https://ioiototm.github.io/project/games/research/StuckInSpace/PhoneHolder.png" alt="A photo of the phone in the holder and showing the game"/>
+&lt;/div>
+&lt;a href="https://ioiototm.github.io/project/games/research/StuckInSpace/PhoneHolder.png" itemprop="contentUrl">&lt;/a>
+&lt;/figure>
+&lt;/div>
+&lt;div class="box" >
+&lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+&lt;div class="img" style="background-image: url('/project/games/research/StuckInSpace/VR_View_Buttons.png');">
+&lt;img itemprop="thumbnail" src="https://ioiototm.github.io/project/games/research/StuckInSpace/VR_View_Buttons.png" alt="A screenshot from the VR player&amp;#39;s perspective showing the wall with buttons and the subttitles above the hand"/>
+&lt;/div>
+&lt;a href="https://ioiototm.github.io/project/games/research/StuckInSpace/VR_View_Buttons.png" itemprop="contentUrl">&lt;/a>
+&lt;/figure>
+&lt;/div>
+&lt;/div>
+&lt;/p></description></item></channel></rss>
