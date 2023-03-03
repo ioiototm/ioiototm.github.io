@@ -4,6 +4,8 @@ title:
 date: 2022-10-24
 type: landing
 
+
+
 sections:
 #  - block: hero
 #    content:
@@ -35,7 +37,7 @@ sections:
 #        gradient_end: '#1976d2'
 #        gradient_start: '#004ba0'
 #        text_color_light: true
-  - block: about.avatar
+  - block: v1/about
     id: about
     content:
       # Choose a user profile to display (a folder name within `content/authors/`)
@@ -46,32 +48,32 @@ sections:
     content:
       title: Programming Languages
       items:
-        - name: "<i style=\"font-size: 4em;\" class=\"devicon-csharp-plain\"></i> <br> C#"
+        - name: "<i class=\"devicon-csharp-plain icons\"></i> <br> C#"
           description: 80%
-          #icon: csharp
-          #icon_pack: fas
-        - name: "<i style=\"font-size: 4em;\" class=\"devicon-cplusplus-plain\"></i> <br> C++"
+        - name: "<i class=\"devicon-java-plain icons\"></i> <br> Java"
+          description: 80%
+        - name: "<i class=\"devicon-cplusplus-plain icons\"></i> <br> C++"
           description: 70%
-          #icon: 
-          #icon_pack: fas devicon-java-plain
-        - name: "<i style=\"font-size: 4em;\" class=\"devicon-java-plain\"></i> <br> Java"
-          description: 80%
-          #icon: camera-retro
-          #icon_pack: fas
+
   - block: features
     content:
       title: Game Development
+      #subtitle: "I'm currently learning game development with Unity and Godot"
       items:
-        - name: "<i style=\"font-size: 4em;\" class=\"devicon-unity-original\"></i><br> Unity"
+        - name: "<i class=\"devicon-unity-original icons\"></i><br> Unity"
           description: 70%
           #icon: unity
           #icon_pack: fab
-        - name: "<i style=\"font-size: 4em;\" class=\"devicon-godot-plain\"></i> <br> Godot"
+        - name: "<i class=\"devicon-godot-plain icons\"></i> <br> Godot"
           description: 60%
           #icon: godot-engine
           #icon_pack: fab
-        - name: "<i style=\"font-size: 4em;\" class=\"devicon-blender-original\"></i> <br> Blender"
+        - name: "<i class=\"devicon-blender-original icons\"></i> <br> Blender"
           description: 50%
+          #icon: blender
+          #icon_pack: fab
+        #- name: "<i style=\"font-size: 4em;\" class=\"devicon-blender-original\"></i> <br> Blender"
+        #  description: 50%
           #icon: blender
           #icon_pack: fab
   - block: experience
@@ -86,14 +88,14 @@ sections:
       #   Leave `date_end` empty if it's your current employer.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
-        - title: University Teaching Assistant
+        - title: Student Demonstrator
           company: University of Southamton
           company_url: ''
           company_logo: university-of-southampton
           location: Southampton
           date_start: '2019-10-01'
           date_end: ''
-          description: Helping students with first year programming modules in their labs, as well as in the third year Game Design course
+          description: Helping students with first year programming modules in their labs (COMP1202, COMP1203, COMP1204, COMP1206), as well as in the third year Game Design and Development course (COMP3218)
 
         - title: Android Developer - Intern
           company: University of Southamton
@@ -102,40 +104,51 @@ sections:
           location: Southampton
           date_start: '2018-07-01'
           date_end: '2018-09-30'
-          description: Taught electronic engineering and researched semiconductor physics.
+          description: Worked on an Android computer vision application to detect various labels and extract the text on them for faster inventory management
     design:
       columns: '2'
- # - block: experience
- #   content:
- #     title: Education
- #     # Date format for experience
- #     #   Refer to https://wowchemy.com/docs/customization/#date-format
- #     date_format: Jan 2006
- #     # Experiences.
- #     #   Add/remove as many `experience` items below as you like.
- #     #   Required fields are `title`, `company`, and `date_start`.
- #     #   Leave `date_end` empty if it's your current employer.
- #     #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
- #     items:
- #       - title: BsC Computer Science
- #         company: University of Southamton
- #         company_url: ''
- #         company_logo: university-of-southampton
- #         location: Southampton
- #         date_start: '2019-10-01'
- #         date_end: ''
- #         description: Helping students with first year programming modules in their labs, as well as in the third year Game Design course
-#
- #       - title: Android Developer - Intern
- #         company: University of Southamton
- #         company_url: ''
- #         company_logo: university-of-southampton
- #         location: Southampton
- #         date_start: '2018-07-01'
- #         date_end: '2018-09-30'
- #         description: Taught electronic engineering and researched semiconductor physics.
- #   design:
- #     columns: '2'
+  - block: experience
+    content:
+      title: Education
+      # Date format for experience
+      #   Refer to https://wowchemy.com/docs/customization/#date-format
+      date_format: Jan 2006
+      # Experiences.
+      #   Add/remove as many `experience` items below as you like.
+      #   Required fields are `title`, `company`, and `date_start`.
+      #   Leave `date_end` empty if it's your current employer.
+      #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
+      items:
+       
+
+        - title: PhD Computer Science - In Progress
+          company: University of Southamton
+          company_url: ''
+          company_logo: university-of-southampton
+          location: Southampton
+          date_start: '2019-10-01'
+          date_end: 
+          #description: Taught electronic engineering and researched semiconductor physics.
+        
+        - title: BSc Computer Science - First Class Honours
+          company: University of Southamton
+          company_url: ''
+          company_logo: university-of-southampton
+          location: Southampton
+          date_start: '2016-10-01'
+          date_end: '2019-07-01'
+          #description: Helping students with first year programming modules in their labs, as well as in the third year Game Design course
+
+        #- title: Bulgatian High School Diploma - 5.89/6.0
+        #  company: Sofia High School of Mathematics
+        #  company_url: ''
+        #  company_logo:
+        #  location: Sofia
+        #  date_start: '2012-09-15'
+        #  date_end: '2016-07-01'
+        #  #description: Taught electronic engineering and researched semiconductor physics.
+    design:
+      columns: '2'
  # - block: accomplishments
  #   content:
  #     # Note: `&shy;` is used to add a 'soft' hyphen in a long heading.
@@ -149,13 +162,13 @@ sections:
  #     #   Leave other parameters empty if not required.
  #     #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
  #     items:
- #       - certificate_url: https://www.coursera.org
+ #       - #certificate_url: https://www.cambridgeenglish.org/exams-and-tests/advanced/
  #         date_end: ''
- #         date_start: '2021-01-25'
- #         description: ''
- #         organization: Coursera
- #         organization_url: https://www.coursera.org
- #         title: Neural Networks and Deep Learning
+ #         date_start: '2016-05-01'
+ #         description: 'Grade A; CERF Level C2'
+ #         organization: Cambridge Assessment English
+ #         organization_url:  https://www.cambridgeenglish.org/exams-and-tests/advanced/
+ #         title: 'Cambridge English: Advanced (CAE)'
  #         url: ''
  #       - certificate_url: https://www.edx.org
  #         date_end: ''

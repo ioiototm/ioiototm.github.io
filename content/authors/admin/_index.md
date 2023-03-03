@@ -1,4 +1,6 @@
 ---
+
+
 # Display name
 title: Yoan-Daniel Malinov
 
@@ -20,6 +22,7 @@ role: PhD Student in Computer Science
 organizations:
   - name: University of Southampton
     url: https://www.southampton.ac.uk/
+  
 
 # Short bio (displayed in user profile at end of posts)
 bio: Interested in Virtual Reality, multi-modal play and Game Development. 
@@ -28,13 +31,17 @@ bio: Interested in Virtual Reality, multi-modal play and Game Development.
 # Interests to show in About widget
 interests:
   - Virtual Reality
-  - Milti-modal Play
+  - Multi-modal Play
   - Game Design and Development
+  - Music (Drums, Piano, Guitar)
 
 # Education to show in About widget
 education:
   courses:
-    - course: BsC in Computer Science
+    - course: PhD in Computer Science
+      institution: University of Southampton
+      year: 2023 (expected)
+    - course: BSc in Computer Science
       institution: University of Southampton
       year: 2019
     #- course: MEng in Artificial Intelligence
@@ -84,11 +91,26 @@ email: ''
 # Highlight the author in author lists? (true/false)
 highlight_name: true
 ---
+
+
+Hi there! I'm a PhD student at the University of Southampton who loves exploring new ways of creating immersive and interactive experiences with Virtual Reality (VR). 
+
+My research focuses on how different modes of interactions in VR affect each player's engagement, enjoyment, and sense of presence, and I have published a paper as part of my PhD that you can check in the "Publications" link. 
+
+Outside my research, I am interested in music, as well as game design and development - I have worked on some fun projects that you can check out by clicking the "Projects" link on top. Some of my favourite games are inspired by "I Expect You To Die" and "The Stanley Parable". Welcome to my website!
+
+
+<!--
+
+
 I'm a PhD student at the University of Southampton. My research area focuses on Virtual Reality (VR) and multi-modality - the different ways of including a second player in a VR game, and how that affects each participant in it. 
 
-I am also interested in Game Design and Development, and have worked on a few small game projects (all of which can be found on the "Games" page above).
+I am also interested in Game Design and Development, and have worked on a few small game projects.
 
-<!--You can check my research in the "Research" section above.
+
+
+
+You can check my research in the "Research" section above.
 I also like games, so I've gone to a few Game Jams and created a few small prototype games, as well as a number of games for a game course I undertook at university and for my research as well. To see the games I have made, check out the "Games" page above.
 For other programming projects, you can check "Other projects", which might include more things than programming in the future.
 
