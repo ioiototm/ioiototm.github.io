@@ -31,7 +31,7 @@ bio: Interested in Virtual Reality, multi-modal play and Game Development.
 # Interests to show in About widget
 interests:
   - Virtual Reality
-  - Multi-modal Play
+  - Multi-modal play
   - Game Design and Development
   - Music (Drums, Piano, Guitar)
 
@@ -95,9 +95,9 @@ highlight_name: true
 
 Hi there! I'm a PhD student at the University of Southampton who loves exploring new ways of creating immersive and interactive experiences with Virtual Reality (VR). 
 
-My research focuses on how different modes of interactions in VR affect each player's engagement, enjoyment, and sense of presence, and I have published a paper as part of my PhD that you can check in the "Publications" link. 
+My research focuses on how different modes of interactions in VR affect each player's engagement, enjoyment, and sense of presence, and I have published a paper as part of my PhD that you can check in the <a href="publication">"Publications"</a> link. 
 
-Outside my research, I am interested in music, as well as game design and development - I have worked on some fun projects that you can check out by clicking the "Projects" link on top. Some of my favourite games are inspired by "I Expect You To Die" and "The Stanley Parable". Welcome to my website!
+Outside my research, I am interested in music, as well as game design and development - I have worked on some fun projects that you can check out by clicking the <a href="project">"Projects"</a> link on top. Some of my favourite games are inspired by <a href="https://iexpectyoutodie.schellgames.com/">"I Expect You To Die"</a> and <a href="https://www.stanleyparable.com/">"The Stanley Parable"</a>. Welcome to my website!
 
 
 <!--
