@@ -33,7 +33,7 @@ interests:
   - Virtual Reality
   - Multi-modal play
   - Game Design and Development
-  - Music (Drums, Piano, Guitar)
+  - Music (Drums, Guitar, Piano)
 
 # Education to show in About widget
 education:
@@ -50,6 +50,47 @@ education:
     #- course: BSc in Artificial Intelligence
     #  institution: Massachusetts Institute of Technology
     #  year: 2008
+
+
+skillsList:
+  - name: Programming
+    symbols: fa-code
+    devicons: true
+    skills:
+      - name: C#
+        icon: devicon-csharp-plain 
+      - name: C++
+        icon: devicon-cplusplus-plain icon
+      - name: Python
+        icon: devicon-python-plain icon
+      - name: Java
+        icon: devicon-java-plain icon
+
+  - name: Game Development
+    symbols: fa-gamepad
+    devicons: true
+    skills:
+      - name: Unity
+        icon: devicon-unity-original
+      - name: Godot
+        icon: devicon-godot-plain
+      - name: SDL2
+        icon: devicon-sdl-plain
+      - name: GitHub
+        icon: devicon-github-plain
+
+  - name: Other
+    symbols: fa-laptop-code
+    devicons: false
+    skills:
+      - name: Blender
+        icon: fa-cube
+      - name: Aseprite
+        icon: fa-paint-brush
+      - name: FL Studio
+        icon: fa-music
+
+
 
 # Social/Academic Networking
 # For available icons, see: https://wowchemy.com/docs/getting-started/page-builder/#icons

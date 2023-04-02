@@ -124,6 +124,69 @@
       </div>
       {{ end }}
 
+      {{ with $person.skillsList }}
+        <div class="col-md-12">
+          <div class="section-subheading">{{ "Skills" | markdownify }}</div>
+        </div>
+
+        
+        {{ range . }}
+        <div class="col-md-4">
+          <!--<div class="section-subheading">{{ "Skills" | markdownify }}</div>-->
+          <div class="skill-category">{{ .name | humanize | title }}</div>
+          <ul class="ul-skill fa-ul mb-0">
+            {{ $symbol := .symbols}}
+            {{ $devicons := .devicons}}
+            {{ range .skills }}
+            <li>
+              {{ if .icon }}
+                {{ if $devicons }}
+                  
+                  <i class="fa-li {{ .icon }}" style="font-size: 1.5em;" ></i>
+
+                {{ else }}
+
+                  <i class="fa-li fas {{ .icon }}" style="text-align: left;"></i>
+
+                {{ end }}
+
+              {{ else }}
+
+                {{ if $devicons }}
+                  <i class="fa-li {{ $symbol }}"></i>
+                {{ else }}
+                  <i class="fa-li fas {{ $symbol }} "></i>
+                {{ end }}
+
+
+              {{ end }}
+
+              <div class="description">
+                <p class="skill">{{ .name }}</p>
+              </div>
+            </li>
+            {{ end }}
+          </ul>
+        
+        </div>
+        {{ end }}
+      {{ end }}
+
+      <!--{{ with $person.skills }} 
+      <div class="col-md-7">
+        <div class="section-subheading">{{  "Skills" | markdownify }}</div>
+        <ul class="ul-skill fa-ul mb-0"> {{ range .programming }} 
+          <li> 
+            <!--<i class="fa-li fas fa-code"></i>
+            <div class="description">
+              <p class="skill">{{ . }}</p>
+            </div>
+          </li> 
+          {{ end }} 
+        </ul>
+      </div> 
+      {{ end }}-->
+
     </div>
   </div>
 </div>

@@ -44,38 +44,38 @@ sections:
       username: admin
       # Override your bio text from `authors/admin/_index.md`?
       text:
-  - block: features
-    content:
-      title: Programming Languages
-      items:
-        - name: "<i class=\"devicon-csharp-plain icons\"></i> <br> C#"
-          description: 80%
-        - name: "<i class=\"devicon-java-plain icons\"></i> <br> Java"
-          description: 80%
-        - name: "<i class=\"devicon-cplusplus-plain icons\"></i> <br> C++"
-          description: 70%
+#  - block: features
+#    content:
+#      title: Programming Languages
+#      items:
+#        - name: "<i class=\"devicon-csharp-plain icons\"></i> <br> C#"
+#          description: 80%
+#        - name: "<i class=\"devicon-java-plain icons\"></i> <br> Java"
+#          description: 80%
+#        - name: "<i class=\"devicon-cplusplus-plain icons\"></i> <br> C++"
+#          description: 70%
 
-  - block: features
-    content:
-      title: Game Development
-      #subtitle: "I'm currently learning game development with Unity and Godot"
-      items:
-        - name: "<i class=\"devicon-unity-original icons\"></i><br> Unity"
-          description: 70%
-          #icon: unity
-          #icon_pack: fab
-        - name: "<i class=\"devicon-godot-plain icons\"></i> <br> Godot"
-          description: 60%
-          #icon: godot-engine
-          #icon_pack: fab
-        - name: "<i class=\"devicon-blender-original icons\"></i> <br> Blender"
-          description: 50%
-          #icon: blender
-          #icon_pack: fab
-        #- name: "<i style=\"font-size: 4em;\" class=\"devicon-blender-original\"></i> <br> Blender"
-        #  description: 50%
-          #icon: blender
-          #icon_pack: fab
+#  - block: features
+#    content:
+#      title: Game Development
+#      #subtitle: "I'm currently learning game development with Unity and Godot"
+#      items:
+#        - name: "<i class=\"devicon-unity-original icons\"></i><br> Unity"
+#          description: 70%
+#          #icon: unity
+#          #icon_pack: fab
+#        - name: "<i class=\"devicon-godot-plain icons\"></i> <br> Godot"
+#          description: 60%
+#          #icon: godot-engine
+#          #icon_pack: fab
+#        - name: "<i class=\"devicon-blender-original icons\"></i> <br> Blender"
+#          description: 50%
+#          #icon: blender
+#          #icon_pack: fab
+#        #- name: "<i style=\"font-size: 4em;\" #class=\"devicon-blender-original\"></i> <br> Blender"
+#        #  description: 50%
+#          #icon: blender
+#          #icon_pack: fab
   - block: experience
     content:
       title: Experience
