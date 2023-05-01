@@ -88,13 +88,22 @@ sections:
       #   Leave `date_end` empty if it's your current employer.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
+        - title: Research Fellow - <a href="https://www.logaculture.eu/">LoGaCulture</a> Project
+          company: University of Southamton
+          company_url: ''
+          company_logo: university-of-southampton
+          location: Southampton
+          date_start: '2023-05-01'
+          date_end: ''
+          description: Working on developing and evaluating a locative game for the Avebury Stone Circle cultural heritage site in the UK, as part of the LoGaCulture project funded by the European Union’s Horizon programme and UK Research and Investment (UKRI).
+
         - title: Student Demonstrator
           company: University of Southamton
           company_url: ''
           company_logo: university-of-southampton
           location: Southampton
           date_start: '2019-10-01'
-          date_end: ''
+          date_end: '2023-05-01'
           description: Helping students with first year programming modules in their labs (COMP1202, COMP1203, COMP1204, COMP1206), as well as in the third year Game Design and Development course (COMP3218)
 
         - title: Android Developer - Intern

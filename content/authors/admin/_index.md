@@ -138,7 +138,9 @@ Hi there! I'm a PhD student at the University of Southampton who loves exploring
 
 My research focuses on how different modes of interactions in VR affect each player's engagement, enjoyment, and sense of presence, and I have published a paper as part of my PhD that you can check in the <a href="publication">"Publications"</a> link. 
 
-Outside my research, I am interested in music, as well as game design and development - I have worked on some fun projects that you can check out by clicking the <a href="project">"Projects"</a> link on top. Some of my favourite games are inspired by <a href="https://iexpectyoutodie.schellgames.com/">"I Expect You To Die"</a> and <a href="https://www.stanleyparable.com/">"The Stanley Parable"</a>. Welcome to my website!
+Recently, I have also joined the <a href="https://www.logaculture.eu/">LoGaCulture</a> project as a Research Fellow at the University of Southampton, where I will be creating and testing a mixed reality/locative game for the Avebury Stone Circle, one of the most significant cultural heritage sites in Europe. <!--The project is an international collaboration between experts from Portugal, Germany, Ireland, and the UK. The aims are to explore how locative games can benefit European society by increasing engagement, preservation, and understanding of our cultural heritage.-->
+
+Outside my research and work, I am interested in music, as well as game design and development - I have worked on some fun projects that you can check out by clicking the <a href="project">"Projects"</a> link on top. Some of my favourite games are inspired by <a href="https://iexpectyoutodie.schellgames.com/">"I Expect You To Die"</a> and <a href="https://www.stanleyparable.com/">"The Stanley Parable"</a>. Welcome to my website!
 
 
 <!--
