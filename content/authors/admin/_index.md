@@ -16,7 +16,7 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: PhD Student in Computer Science
+role: Research Fellow
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -40,7 +40,7 @@ education:
   courses:
     - course: PhD in Computer Science
       institution: University of Southampton
-      year: 2023 (expected)
+      year: 2024 (expected)
     - course: BSc in Computer Science
       institution: University of Southampton
       year: 2019
