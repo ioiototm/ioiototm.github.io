@@ -16,7 +16,7 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: PhD Student in Computer Science
+role: Research Fellow for the LoGaCulture Project
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -33,14 +33,14 @@ interests:
   - Virtual Reality
   - Multi-modal play
   - Game Design and Development
-  - Music (Drums, Guitar, Piano)
+  - Music (Drums, Guitar, Bass, Piano)
 
 # Education to show in About widget
 education:
   courses:
     - course: PhD in Computer Science
       institution: University of Southampton
-      year: 2023 (expected)
+      year: 2025 (final corrections)
     - course: BSc in Computer Science
       institution: University of Southampton
       year: 2019
@@ -134,13 +134,38 @@ highlight_name: true
 ---
 
 
-Hi there! I'm a PhD student at the University of Southampton who loves exploring new ways of creating immersive and interactive experiences with Virtual Reality (VR). 
+Hi there! I'm Yoan-Daniel, a Research Fellow at the University of Southampton who loves exploring new ways of creating immersive and interactive experiences with Virtual Reality (VR). I'm also a passionate developer and creator who enjoys working on projects that bring people together through technology and creativity.
 
-My research focuses on how different modes of interactions in VR affect each player's engagement, enjoyment, and sense of presence, and I have published a paper as part of my PhD that you can check in the <a href="publication">"Publications"</a> link. 
+🚀 **What I’m Working On**:
+- **[LoGaCulture Project](https://www.logaculture.eu/)**: Developing a locative AR game for the **Avebury Stone Circle**, blending cultural heritage with modern technology.
+- **Open-Source Projects**: I enjoy sharing my work with others, whether it's project files, code, or art assets. Everything I create is open for exploration and reuse - you can check out some of my **[projects](project)** and **[GitHub](https://github.com/ioiototm)**, and feel free to build on them!
 
-Recently, I have also joined the <a href="https://www.logaculture.eu/">LoGaCulture</a> project as a Research Fellow at the University of Southampton, where I will be creating and testing a mixed reality/locative game for the Avebury Stone Circle, one of the most significant cultural heritage sites in Europe. <!--The project is an international collaboration between experts from Portugal, Germany, Ireland, and the UK. The aims are to explore how locative games can benefit European society by increasing engagement, preservation, and understanding of our cultural heritage.-->
+🎮 **Passions & Projects**:
+- Game development inspired by storytelling and unique mechanics, with favorites like *The Stanley Parable*, *Undertale/Deltarune*, and *Outer Wilds*.
+- Making music with my drums, guitar/bass, keyboard, and tools like **FL Studio**.
 
-Outside my research and work, I am interested in music, as well as game design and development - I have worked on some fun projects that you can check out by clicking the <a href="project">"Projects"</a> link on top. Some of my favourite games are inspired by <a href="https://iexpectyoutodie.schellgames.com/">"I Expect You To Die"</a> and <a href="https://www.stanleyparable.com/">"The Stanley Parable"</a>. Welcome to my website!
+📖 **Research Highlights**:
+- Explored how different modes of interaction in a multi-modal co-op VR game influence immersion and co-presence.
+- Published the subsequent findings of the experiments [here](publication).
+- Developing a locative AR game for the **[LoGaCulture Project](https://www.logaculture.eu/)**.
+
+---
+
+✨ **Why Open-Source?**
+I believe creativity thrives when ideas are shared. By making my work open, I aim to:
+- Help others learn from my projects and techniques.
+- Encourage collaboration, remixing, and innovation.
+- Make tools and resources accessible to anyone who wants to experiment.
+
+Check out my **[itch.io](https://ioiototm.itch.io/)** for downloadable games and **[GitHub](https://github.com/ioiototm)** for source code and other projects. If something catches your eye, feel free to dive in and make it your own!
+
+🔍 *P.S. Keep an eye out - exploration might just unlock a little secret!*
+
+
+
+
+
+
 
 
 <!--
@@ -160,3 +185,123 @@ For other programming projects, you can check "Other projects", which might incl
 I am a PhD student in Computer Science at the University of Southampton. My PhD is focused on Virtual Reality and multi-modal play - I am interested in the different ways of introducing multiple people to a VR experience without the need for a headset.
 Alice Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
 {style="text-align: justify;"}-->
+
+
+---
+
+
+
+<!-- Add custom HTML for the VR glasses Easter egg -->
+<div id="easter-egg-modal" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; ">
+  <p>🎉 <strong>You've Unlocked a Secret!</strong> 🎉</p>
+<p>🖌️ Download the <strong>CSP source file</strong> for this avatar and explore how it was created!</p>
+<a href="/project/secret/avatar-source.clip" download="avatar-source.clip" style="display: inline-block; padding: 10px 20px; background: #007bff; color: white; border-radius: 5px; text-decoration: none;">Download File</a>
+
+  <br>
+  <button id="close-modal" style="margin-top: 10px; padding: 5px 10px; background: #ccc; border: none; border-radius: 5px; cursor: pointer;">Close</button>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const avatar = document.querySelector(".avatar");
+    const modal = document.getElementById("easter-egg-modal");
+    const closeModal = document.getElementById("close-modal");
+  
+
+ avatar.addEventListener("mousemove", (e) => {
+    // Adjust coordinates based on glasses placement
+    const rect = avatar.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const clickY = e.clientY - rect.top;
+
+    // Define glasses click area (adjust values for your avatar)
+    const glassesArea = {
+      x1: rect.width * 0.25,
+      x2: rect.width * 0.75,
+      y1: rect.height * 0.20,
+      y2: rect.height * 0.35,
+    };
+
+    if (
+      clickX >= glassesArea.x1 &&
+      clickX <= glassesArea.x2 &&
+      clickY >= glassesArea.y1 &&
+      clickY <= glassesArea.y2
+    ) {
+      avatar.classList.add("clickable"); // Add pointer cursor
+    } else {
+      avatar.classList.remove("clickable"); // Remove pointer cursor
+    }
+  });
+
+    // Add a clickable area over the VR glasses
+    avatar.addEventListener("click", (e) => {
+      // Adjust coordinates based on glasses placement
+      const rect = avatar.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const clickY = e.clientY - rect.top;
+  
+      // Define glasses click area (adjust values for your avatar)
+      const glassesArea = {
+        x1: rect.width * 0.25,
+        x2: rect.width * 0.75,
+        y1: rect.height * 0.20,
+        y2: rect.height * 0.35,
+      };
+
+
+  
+      if (
+        clickX >= glassesArea.x1 &&
+        clickX <= glassesArea.x2 &&
+        clickY >= glassesArea.y1 &&
+        clickY <= glassesArea.y2
+      ) {
+        e.preventDefault();
+       
+         //check if theme is dark or light and print it in a window alert
+        // Get the current theme
+        const body = document.body;
+        const currentTheme = body.classList.contains('dark') ? 'dark' : 'light';
+
+            // Dynamically set the modal styles
+      if (currentTheme === "dark") {
+        modal.style.backgroundColor = "rgb(33, 37, 41)"; // Dark background
+        modal.style.color = "#FFFFFF"; // Light text
+      } else {
+        modal.style.backgroundColor = "#FFFFFF"; // Light background
+        modal.style.color = "#000000"; // Dark text
+      }
+        modal.style.display = "block";
+        //window.alert(`The current theme is ${currentTheme}`);
+  
+      }
+    });
+  
+    // Close the modal
+    closeModal.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  
+    // Close modal if clicked outside
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  });
+
+
+ 
+  </script>
+
+
+<style>
+  /* CSS for the clickable area */
+.clickable {
+  cursor: pointer; /* Changes cursor to the hand (pointer) */
+}
+  </style>
+
+
+
