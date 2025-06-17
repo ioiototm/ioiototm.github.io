@@ -136,7 +136,7 @@ sections:
           company_logo: university-of-southampton
           location: Southampton
           date_start: '2019-10-01'
-          date_end: 
+          date_end:  '2025-04-25'
           #description: Taught electronic engineering and researched semiconductor physics.
         
         - title: BSc Computer Science - First Class Honours

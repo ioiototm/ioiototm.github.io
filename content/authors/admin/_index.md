@@ -25,12 +25,12 @@ organizations:
   
 
 # Short bio (displayed in user profile at end of posts)
-bio: Interested in Virtual Reality, multi-modal play and Game Development. 
+bio: Interested in Virtual/Augmented Reality, multi-modal play and Game Development. 
 #My PhD is focused on Virtual Reality and multi-modal play - I am interested in the different ways of introducing multiple people to a VR experience without the need for a headset.
 
 # Interests to show in About widget
 interests:
-  - Virtual Reality
+  - Virtual/Augmented Reality
   - Multi-modal play
   - Game Design and Development
   - Music (Drums, Guitar, Bass, Piano)
@@ -40,7 +40,7 @@ education:
   courses:
     - course: PhD in Computer Science
       institution: University of Southampton
-      year: 2025 (final corrections)
+      year: 2025
     - course: BSc in Computer Science
       institution: University of Southampton
       year: 2019
