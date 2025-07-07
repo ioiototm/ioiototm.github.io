@@ -87,6 +87,8 @@ skillsList:
         icon: fa-cube
       - name: Aseprite
         icon: fa-paint-brush
+      - name: Clip Studio Paint
+        icon: fa-paint-brush
       - name: FL Studio
         icon: fa-music
 
