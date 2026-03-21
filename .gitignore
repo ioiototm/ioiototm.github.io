@@ -10,6 +10,3 @@ resources/
 
 # Claude working files
 .claude/
-
-# Old context, not part of the site
-old-website-context-for-claude/
