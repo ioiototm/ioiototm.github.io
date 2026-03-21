@@ -1,0 +1,156 @@
+name: "Yoan-Daniel Malinov"
+terminalTitle: "Administrator: ioioto"
+favicon: "/img/ioioto.ico"
+tagline: "Research Fellow // Chaotic creator"
+role: "Research Fellow, [LoGaCulture Project](https://logaculture.eu)"
+location: "Southampton, UK"
+availability: "Always down to build something weird"
+intro: "I don't believe in hoarding ideas. I'm a researcher and creator who moves fast, breaks things, and jumps between projects. Whether it's code, music, or academic papers, I want to make things that are infinitely replicable and free for everyone."
+portraitDownload: "/resources/me_v2.1_no_timelapse.clip"
+
+hero:
+  title: "ioioto: research, code, and the art of giving it all away"
+  subtitle: "I build games, tools, and experiments, and I release my own work as CC0 wherever I can. You don't need permission - **_everything here is yours to take. Steal it, remix it, make something new._**"
+  tagline: "Creative Research & Archives"
+# **_steal my work, remix it, and make something new._**"
+bouncingBetween:
+  - "VR + spatial computing research"
+  - "Indie game prototypes & streaming"
+  - "Open CC0 art + music drops"
+
+social:
+  - name: "GitHub"
+    url: "https://github.com/ioiototm"
+    icon: "fab fa-github"
+    tones: ["code"]
+    group: "creative"
+  - name: "Itch.io"
+    url: "https://ioiototm.itch.io/"
+    icon: "fab fa-itch-io"
+    tones: ["game"]
+    group: "creative"
+  - name: "Twitch"
+    url: "https://twitch.tv/ioiototm"
+    icon: "fab fa-twitch"
+    tones: ["music", "game", "code"]
+    group: "creative"
+  - name: "Google Scholar"
+    url: "https://scholar.google.co.uk/citations?user=1hptFVEAAAAJ&hl=en"
+    icon: "fas fa-graduation-cap"
+    tones: ["research"]
+    group: "work"
+  - name: "LinkedIn"
+    url: "https://www.linkedin.com/in/yoan-daniel-malinov/"
+    icon: "fab fa-linkedin"
+    tones: ["research", "writing"]
+    group: "work"
+  - name: "Email"
+    url: "mailto:ioiototm@gmail.com"
+    icon: "fas fa-envelope"
+    tones: ["research", "writing"]
+    group: "work"
+
+about:
+  paragraphs:
+    - "I am a creator with an academic streak. I bounce between game engines, music production, and computer science research, usually chasing whatever idea feels most interesting in the moment."
+    - "I don't worry much about polish; I worry about the spark. I share my 'messy bits' and prototypes under CC0 because I want to lower the barrier for others. If my half-finished experiment helps you build your masterpiece, then the system works."
+
+workingOn:
+  - title: "LoGaCulture Project"
+    description: "Designing a locative AR game for the Avebury Stone Circle, trying to blend cultural heritage with playful interaction."
+    link: "https://www.logaculture.eu/case-study-1/"
+#  - title: "reative experiments"
+#    description: "Prototyping small ideas in games, AI, interactive art, sharing them under CC0 when applicable."
+#    link: "https://github.com/ioiototm"
+#  - title: "Streaming prototypes"
+#    description: "Building small, strange games live, documenting the process, and testing co-op interactions in VR and beyond."
+#    link: "https://twitch.tv/ioiototm"
+
+passions:
+  - "Story-driven game design inspired by **The Stanley Parable**, **Undertale/Deltarune**, and **Outer Wilds**."
+  - "Making music with **drums**, **guitar/bass**, **keys**, **FL Studio**, and even **VR drumming** sometimes."
+  - "Prototyping **strange and playful ideas** in games and AI."
+#  - "Exploring how virtual, augmented, and mixed reality can support curiosity and collaborative play."
+
+openSourceBeliefs:
+  - "Digital goods are infinitely replicable. Hoarding them makes no sense."
+  - "Copyright often stifles creativity. I want to fuel it."
+  - "Real learning happens when you see the messy bits, not just the polished product."
+  - "I release my personal contributions as CC0. If I use other libraries, I respect their licenses, but *my* part is yours."
+  - "Use my work. Seriously. Take it, sell it, change it. I want to see what you do with it."
+
+skills:
+  - category: "Programming"
+    items:
+      - name: "C#"
+        icon: "devicon-csharp-plain"
+      - name: "C++"
+        icon: "devicon-cplusplus-plain"
+      - name: "Python"
+        icon: "devicon-python-plain"
+      - name: "Java"
+        icon: "devicon-java-plain"
+  - category: "Game Dev"
+    items:
+      - name: "Unity"
+        icon: "devicon-unity-plain"
+      - name: "Godot"
+        icon: "devicon-godot-plain"
+      - name: "SDL2/3"
+        icon: "devicon-sdl-plain"
+      - name: "GitHub"
+        icon: "devicon-github-plain"
+  - category: "Creative"
+    items:
+      - name: "Blender"
+        icon: "devicon-blender-original"
+      - name: "Aseprite"
+        icon: "fas fa-pencil-alt"
+      - name: "Clip Studio Paint"
+        icon: "fas fa-paint-brush"
+      - name: "FL Studio"
+        icon: "fas fa-music"
+
+education:
+  - degree: "PhD in Computer Science"
+    place: "[University of Southampton](https://www.southampton.ac.uk)"
+    years: "2019 – 2025"
+    details: "Researching multi-modal cooperative VR play and how it shapes immersion and social presence."
+  - degree: "BSc Computer Science, First Class Honours"
+    place: "[University of Southampton](https://www.southampton.ac.uk)"
+    years: "2016 – 2019"
+    details: "A general computer science degree with some focus on game development."
+  - degree: "High School Diploma - 5.89 GPA"
+    place: "[Sofia High School of Mathematics (SMG)](https://smg.bg/)"
+    years: "2011 – 2016"
+    details: "Specialized in Mathematics, Informatics, and English."
+
+experience:
+  - role: "Research Fellow – LoGaCulture"
+    org: "[University of Southampton](https://www.southampton.ac.uk)"
+    years: "May 2023 – Present"
+    location: "Southampton"
+    details: "Developing and evaluating a locative game for the Avebury Stone Circle as part of LoGaCulture."
+  - role: "Student Demonstrator"
+    org: "[University of Southampton](https://www.southampton.ac.uk)"
+    years: "Oct 2019 – May 2023"
+    location: "Southampton"
+    details: "Supported first-year programming labs and the COMP3218 Game Design & Development course."
+  - role: "Android Developer – Intern"
+    org: "[University of Southampton](https://www.southampton.ac.uk)"
+    years: "Jul 2018 – Sep 2018"
+    location: "Southampton"
+    details: "Built a computer-vision Android app to scan labels and speed up inventory workflows for a company."
+
+links:
+  itch: "https://ioiototm.itch.io/"
+  github: "https://github.com/ioiototm"
+  repo: "https://github.com/ioiototm/ioiototm.github.io"
+  bluesky: "https://bsky.app/profile/ioioto.me"
+  email: "mailto:ioiototm@gmail.com"
+
+longform:
+  paragraphs:
+    - "Zdravey! I'm Yoan. I'm a **Research Fellow** at the University of Southampton, but I don't really fit the typical academic mold (I think). I'm a **creator first**. I've always been chaotic, fast, and experimental—jumping from code to music to art, rarely stopping to polish things to perfection."
+    - "My 'day job' is the **LoGaCulture Project**, designing a locative AR game for the Avebury Stone Circle. It's a perfect blend: using tech to make people interact with the world (and history) in playful ways. When I'm not researching, I'm usually prototyping strange ideas in Unity, jamming on my drums, or streaming. I use AI to move faster, but the goal is always the same: **get the idea out of my head and into reality.**"
+    - "So yeah, look around. My code, my art, my music, my messy experiments. It's all here. **If you want it, take it.** You don't need to ask."

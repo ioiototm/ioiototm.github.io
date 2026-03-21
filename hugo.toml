@@ -1,0 +1,78 @@
+title = "ioioto"
+baseURL = "/"
+languageCode = "en"
+theme = "multimode-studio-hugo-theme"
+[pagination]
+  pagerSize = 12
+
+enableGitInfo = false
+
+[taxonomies]
+  tag = "tags"
+  stream = "streams"
+
+[params]
+  copyright = "Unlicense / CC0"
+  cc0Path = "/cc0"
+  tagline = "code · games · art · music"
+  # Active modes on the homepage (default: all six)
+  # modes = ["code", "game", "art", "music", "research", "writing"]
+
+[[menus.main]]
+  name = "Home.md"
+  url = "/"
+  pre = "spark"
+  weight = 1
+
+[[menus.main]]
+  name = "Me.md"
+  url = "/me/"
+  pre = "user"
+  weight = 2
+
+[[menus.main]]
+  name = "Projects.ts"
+  url = "/projects/"
+  pre = "spark"
+  weight = 3
+  [menus.main.params]
+    mode = "code"
+
+[[menus.main]]
+  name = "Art.png"
+  url = "/art/"
+  pre = "palette"
+  weight = 4
+  [menus.main.params]
+    mode = "art"
+
+[[menus.main]]
+  name = "Music.wav"
+  url = "/music/"
+  pre = "note"
+  weight = 5
+  [menus.main.params]
+    mode = "music"
+
+[[menus.main]]
+  name = "Research.pdf"
+  url = "/research/"
+  pre = "flask"
+  weight = 6
+  [menus.main.params]
+    mode = "research"
+
+[[menus.main]]
+  name = "Blog.md"
+  url = "/posts/"
+  pre = "pen"
+  weight = 7
+  [menus.main.params]
+    mode = "writing"
+
+[[menus.main]]
+  name = "Timeline.md"
+  url = "/timeline/"
+  pre = "star"
+  weight = 8
+

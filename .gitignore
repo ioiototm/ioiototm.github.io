@@ -1,0 +1,15 @@
+# Hugo build output
+public/
+resources/
+
+# Hugo lock file
+.hugo_build.lock
+
+# macOS
+.DS_Store
+
+# Claude working files
+.claude/
+
+# Old context, not part of the site
+old-website-context-for-claude/

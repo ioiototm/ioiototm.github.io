@@ -1,0 +1,19 @@
+files:
+  about.md: "I am a chaotic creative developer."
+  contact.txt: "Find me on the social links above."
+  skills.json: '["Code", "Game Dev", "Music", "Art", "Research"]'
+  secret.txt: 'You found the easter egg! Try "marmalade", "matrix" or "party".'
+
+# Easter egg commands — add new ones here, the terminal picks them up automatically.
+# Each command can have:
+#   output      — text (or HTML) to print
+#   open        — URL to open in a new tab
+#   description — shown in `help` (only if showInHelp is true below)
+#
+# showInHelp: false  ← set to true to reveal easter eggs in `help` output
+showInHelp: false
+commands:
+  marmalade:
+    description: "A CC0 catgirl"
+    output: "Opening marmalade.you..."
+    open: "https://marmalade.you"

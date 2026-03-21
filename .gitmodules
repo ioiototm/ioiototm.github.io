@@ -1,0 +1,3 @@
+[submodule "themes/multimode-studio-hugo-theme"]
+	path = themes/multimode-studio-hugo-theme
+	url = https://github.com/ioiototm/Multimode-Studio-Hugo-Theme.git
