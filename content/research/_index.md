@@ -1,7 +1,7 @@
 ---
 
 title: Research
-description: "Academic publications, talks, and doctoral work."
+description: "The formal stuff. Papers, talks, PhD things."
 view: list
 
 

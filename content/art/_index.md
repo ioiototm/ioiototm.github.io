@@ -1,7 +1,7 @@
 ---
 
 title: Art
-description: "Digital sketches, 3D renders, and CC0 assets."
+description: "Sketches, renders, and CC0 stuff you can take."
 
 
 ---

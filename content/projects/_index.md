@@ -1,7 +1,7 @@
 ---
 
 title: Projects
-description: "Games, tools, and interactive experiments."
+description: "Things I built to see if they'd work."
 
 
 ---

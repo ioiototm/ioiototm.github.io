@@ -10,7 +10,7 @@ _build:
 ---
 # {{< icon "fab fa-creative-commons" >}} {{< icon "fab fa-creative-commons-zero" >}} No Rights Reserved
 
-**I believe that digital goods are infinitely replicable, and hoarding them makes no sense.**
+**I grew up pirating movies, games, and software. Without that, I wouldn't know half the things I know. This is me giving it back.**
 
 Most of the creative work on this website - code, art, music, and writing - is released under the **CC0 1.0 Universal (Public Domain Dedication)**.
 
@@ -24,7 +24,7 @@ You can:
 *   **Not ask for permission;**
 *   **Not give credit** (though it is always appreciated!).
 
-If something on this site helps you ship a game, paper, video, or any other project, good: **go make something awesome.**
+If something on this site helps you ship a game, paper, video, or any other project, good. **That's the whole point.**
 {{< /panel >}}
 
 {{< panel "cc0-philosophy" >}}
@@ -53,15 +53,15 @@ In those cases, **their** licences still apply to **their** parts.
 For my own contributions:
 
 - assets and writing are **CC0** whenever possible  
-- code is usually **MIT** if CC0 is awkward, but the spirit stays the same – my part is as permissive as I can make it
+- code is **Unlicense** or **MIT** - both are as close to "just take it" as code licenses get
 
 If you are ever unsure about a specific project, you can treat my side of it as "take it and run with it".
 {{< /panel >}}
 
 {{< panel "cc0-closing" >}}
-But for everything that is *mine*? **It's yours.**
+But for everything that's *mine*? **It's yours.**
 
-You do not need permission. You do not need to ask.
+You don't need permission. You don't need to ask.
 
-If something here sparks an idea – **take it, break it, rebuild it, and make it completely yours.**
+If something here gives you a starting point - **run with it.**
 {{< /panel >}}

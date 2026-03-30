@@ -1,7 +1,7 @@
 ---
 
 title: Blog
-description: "Thoughts on research, design, and open source."
+description: "Whatever's on my mind. Mostly rambling."
 
 
 ---

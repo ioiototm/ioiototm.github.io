@@ -5,12 +5,18 @@ tagline: "Research Fellow // Chaotic creator"
 role: "Research Fellow, [LoGaCulture Project](https://logaculture.eu)"
 location: "Southampton, UK"
 availability: "Always down to build something weird"
-intro: "I don't believe in hoarding ideas. I'm a researcher and creator who moves fast, breaks things, and jumps between projects. Whether it's code, music, or academic papers, I want to make things that are infinitely replicable and free for everyone."
+intro: "I don't believe in hoarding ideas. I'm a researcher and creator who jumps between too many things at once. Code, music, academic papers — I want all of it out in the open, free for everyone."
 portraitDownload: "/resources/me_v2.1_no_timelapse.clip"
 
 hero:
-  title: "ioioto: research, code, and the art of giving it all away"
-  subtitle: "I build games, tools, and experiments, and I release my own work as CC0 wherever I can. You don't need permission - **_everything here is yours to take. Steal it, remix it, make something new._**"
+  title: "ioioto: research, code, and giving it all back"
+  titlePrefix: "ioioto: research, code, and "
+  titleEndings:
+    - "giving it all back"
+    - "way too many side projects"
+    - "stuff you can take"
+    - "zero rights reserved"
+  subtitle: "I build games, tools, and experiments, and I release my own work as CC0 wherever I can. You don't need permission - **_everything here is yours to take._**"
   tagline: "Creative Research & Archives"
 # **_steal my work, remix it, and make something new._**"
 bouncingBetween:
@@ -52,8 +58,8 @@ social:
 
 about:
   paragraphs:
-    - "I am a creator with an academic streak. I bounce between game engines, music production, and computer science research, usually chasing whatever idea feels most interesting in the moment."
-    - "I don't worry much about polish; I worry about the spark. I share my 'messy bits' and prototypes under CC0 because I want to lower the barrier for others. If my half-finished experiment helps you build your masterpiece, then the system works."
+    - "I'm a researcher who also makes games, music, and art - usually not in that order. I chase whatever idea grabs me and share the messy bits under CC0 because locked-down files on a hard drive help nobody."
+    - "If my half-finished experiment helps you build your masterpiece, good. That's the whole point."
 
 workingOn:
   - title: "LoGaCulture Project"
@@ -151,6 +157,6 @@ links:
 
 longform:
   paragraphs:
-    - "Zdravey! I'm Yoan. I'm a **Research Fellow** at the University of Southampton, but I don't really fit the typical academic mold (I think). I'm a **creator first**. I've always been chaotic, fast, and experimental—jumping from code to music to art, rarely stopping to polish things to perfection."
+    - "Zdravey! I'm Yoan. I'm a **Research Fellow** at the University of Southampton, but I don't really fit the typical academic mold (I think). I'm a **creator first** - I jump from code to music to art and rarely stop to polish things to perfection."
     - "My 'day job' is the **LoGaCulture Project**, designing a locative AR game for the Avebury Stone Circle. It's a perfect blend: using tech to make people interact with the world (and history) in playful ways. When I'm not researching, I'm usually prototyping strange ideas in Unity, jamming on my drums, or streaming. I use AI to move faster, but the goal is always the same: **get the idea out of my head and into reality.**"
     - "So yeah, look around. My code, my art, my music, my messy experiments. It's all here. **If you want it, take it.** You don't need to ask."

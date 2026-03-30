@@ -8,9 +8,9 @@ summary: "A VR co-op game built for my PhD research into multi-modal play and co
 
 
 ---
-I created this game for my research into multi-modality and co-presence in VR - it's heavily inspired by games such as "Keep Talking and Nobody Explodes", where the two players have to help eachother defuse a bomb.
+I created this game for my research into multi-modality and co-presence in VR - it's heavily inspired by games such as "Keep Talking and Nobody Explodes", where the two players have to help each other defuse a bomb.
 
-StuckInSpace is a two player co-op game where the VR player and the second non-VR player have to help eachother to fix the spaceship. The second player can either use a PC (the normal way) or a smartphone through a novel approach using one of the HTC Vive controllers that sends information about the exact position in VR space to the phone and then renders it like a "window" into the VR world.
+StuckInSpace is a two player co-op game where the VR player and the second non-VR player have to help each other to fix the spaceship. The second player can either use a PC (the normal way) or a smartphone through a novel approach using one of the HTC Vive controllers that sends information about the exact position in VR space to the phone and then renders it like a "window" into the VR world.
 
 Currently there is no way to download the game as I am still working on it, but here are some screenshots of the game and the hardware setup:
 
