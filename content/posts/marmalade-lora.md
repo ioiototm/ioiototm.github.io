@@ -5,7 +5,6 @@ date: 2026-10-04
 summary: "How I trained my first LoRA, for Krea 2, so anyone can generate Mal."
 image: "https://marmalade.you/lab/marmalora-mal-the-windsurfer/thumb.png"
 tags: ["marmalade", "ai", "lora", "krea2", "comfyui", "writing"]
-draft: true
 related:
   - "/projects/marmalade"
   - "/projects/marmalade-lora"
