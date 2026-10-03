@@ -1,12 +1,12 @@
 name: "Yoan-Daniel Malinov"
 firstName: "Yoan-Daniel"
 lastName: "Malinov"
-title: "Game Developer · XR Researcher"
+title: "Software Engineer · Games & XR"
 tagline: |
-  I build games and study how people play them. Most recently shipped an AR heritage game at the 5,000-year-old stone circle of Avebury as part of the LoGaCulture project.
+  I build software, games, and the occasional strange experiment. Currently a Software Engineer at the Raspberry Pi Foundation working on Ada Computer Science, after a PhD and postdoc in games and XR at Southampton, where I shipped an AR heritage game at the 5,000-year-old stone circle of Avebury.
 credentials: "PhD in Computer Science · First-Class BSc · University of Southampton"
 statement: ""
-location: "Southampton, UK"
+location: "Cambridge, UK"
 email: "ioiototm@gmail.com"
 
 # ── Audience profiles ─────────────────────────────────────
@@ -57,7 +57,7 @@ links:
     url: "https://orcid.org/0000-0003-3263-3614"
     icon: "ai ai-orcid"
     external: true
-  - label: "Southampton, UK"
+  - label: "Cambridge, UK"
     icon: "fa-solid fa-location-dot"
 
 sidebar:
@@ -115,8 +115,15 @@ tabs:
     section: "publications"
 
 experience:
-  comment: "A Research Fellow and Lead Developer for the Ages of Avebury locative AR heritage game"
+  comment: "Software engineer, previously research fellow"
   jobs:
+    - title: "Software Engineer"
+      org: "Raspberry Pi Foundation · Ada Computer Science"
+      date: "Jul 2026 - Present"
+      bullets:
+        - 'Working across the full stack of <a href="https://adacomputerscience.org">Ada Computer Science</a>, a free computer science learning platform used by students and teachers - <a href="https://github.com/isaacphysics/isaac-react-app">React/TypeScript frontend</a>, <a href="https://github.com/isaacphysics/isaac-api">Java backend</a>, PostgreSQL and Elasticsearch.'
+        - "Seconded to the University of Cambridge Department of Computer Science and Technology."
+
     - title: "Research Fellow"
       org: "LoGaCulture Project · University of Southampton"
       date: "2023 - May 2026"
@@ -192,11 +199,13 @@ skills:
   - category: "Game & XR"
     items: ["Unity (C#)", "AR Foundation / ARCore / ARKit", "Godot", "Forge Networking", "FMOD", "OpenXR", "Mapbox", "GPS / Geofencing"]
   - category: "Languages"
-    items: ["C#", "C/C++", "Python", "Java", "R", "JavaScript", "HTML / CSS"]
+    items: ["C#", "C/C++", "Python", "Java", "TypeScript", "R", "JavaScript", "HTML / CSS"]
+  - category: "Web"
+    items: ["React", "TypeScript", "Hugo"]
   - category: "ML / AI"
     items: ["MediaPipe", "TensorFlow Lite", "Ollama", "llama.cpp", "RAG / ChromaDB", "LoRA Fine-Tuning", "Stable Diffusion / ComfyUI", "TTS / STT (Whisper)", "Prompt Engineering"]
   - category: "Backend & Infra"
-    items: ["Linux", "nginx", ".NET", "SQLite", "Docker", "Git", "GitHub Actions", "Cloudflare Pages", "Cloudflare Tunnels", "Pocketbase"]
+    items: ["Linux", "nginx", ".NET", "PostgreSQL", "Elasticsearch", "SQLite", "Docker", "Git", "GitHub Actions", "Cloudflare Pages", "Cloudflare R2 / Workers", "Cloudflare Tunnels", "Pocketbase"]
   - category: "Mobile Publishing"
     items: ["App Store (iOS)", "Google Play (Android)", "TestFlight"]
   - category: "Hardware & IoT"
