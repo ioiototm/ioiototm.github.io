@@ -41,6 +41,12 @@ social:
     icon: "fab fa-twitch"
     tones: ["music", "game", "code"]
     group: "creative"
+  - name: "Marmalade"
+    url: "https://marmalade.you"
+    icon: "fas fa-cat"
+    image: "https://marmalade.you/logos/M.png"
+    tones: ["art"]
+    group: "creative"
   - name: "Google Scholar"
     url: "https://scholar.google.co.uk/citations?user=1hptFVEAAAAJ&hl=en"
     icon: "fas fa-graduation-cap"
@@ -66,6 +72,9 @@ workingOn:
   - title: "Ada Computer Science"
     description: "A free platform for students and teachers learning computer science. I work on all of it, the React frontend and the Java backend."
     link: "https://adacomputerscience.org"
+  - title: "Marmalade"
+    description: "A CC0 orange catgirl that anyone can use. I keep drawing her, making stickers and building stuff around her."
+    link: "/projects/marmalade/"
 #  - title: "reative experiments"
 #    description: "Prototyping small ideas in games, AI, interactive art, sharing them under CC0 when applicable."
 #    link: "https://github.com/ioiototm"
@@ -129,7 +138,16 @@ skills:
   - { name: "Thematic analysis", modes: [research, writing], level: 3, icon: "fas fa-tags" }
   - { name: "Academic writing", modes: [research, writing], level: 3, icon: "fas fa-file-lines" }
   - { name: "LaTeX", modes: [research, writing], level: 3, icon: "fas fa-file-code" }
-
+  # AI / local models
+  - { name: "Local LLMs", modes: [code], level: 4, note: "Running models on my own hardware", icon: "fas fa-brain" }
+  - { name: "Ollama", modes: [code], level: 4, icon: "fas fa-server" }
+  - { name: "llama.cpp", modes: [code], level: 3, icon: "fas fa-microchip" }
+  - { name: "ComfyUI", modes: [code, art], level: 3, icon: "fas fa-diagram-project" }
+  - { name: "Image models", modes: [code, art], level: 3, icon: "fas fa-image" }
+  - { name: "LoRA training", modes: [code, art], level: 3, note: "Have made a number of LoRA models for various purposes", icon: "fas fa-sliders" }
+  - { name: "Text-to-speech", modes: [code, music], level: 2, icon: "fas fa-comment-dots" }
+  - { name: "Discord bots", modes: [code], level: 2, icon: "fab fa-discord" }
+  - { name: "Streaming", modes: [game, music], level: 3, icon: "fab fa-twitch" }
 
 education:
   - degree: "PhD in Computer Science"
