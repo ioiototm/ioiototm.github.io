@@ -1,0 +1,174 @@
+{{ define "main" }}
+  {{ $modeData := partial "active-modes.html" . }}
+  {{ $activeModes := $modeData.modes }}
+  {{ $heroTags := $activeModes }}
+  {{ $tagIcons := dict "code" "spark" "game" "controller" "art" "palette" "music" "note" "research" "flask" "writing" "pen" }}
+  {{ $filterIcons := merge (dict "all" "star") $tagIcons }}
+  {{ $modes := slice "all" }}
+  {{ range $activeModes }}{{ $modes = $modes | append . }}{{ end }}
+  {{ $profile := site.Data.profile }}
+  {{ $nowPage := site.GetPage "/timeline" }}
+  {{ if not $nowPage }}
+    {{ $nowPage = site.GetPage "section" "timeline" }}
+  {{ end }}
+
+  <section class="hero">
+    {{ with $profile }}
+      <div class="hero-left">
+        <figure class="portrait-frame">
+          <img src="{{ "img/portrait.png" | relURL }}" alt="Portrait of {{ .name }}" loading="lazy">
+          {{ with .portraitDownload }}
+            <a href="{{ . }}" class="me-portrait-download" title="Download source file (CSP) · CC0" download>
+              <i class="fas fa-download"></i>
+            </a>
+          {{ end }}
+        </figure>
+        <div class="hero-profile">
+          <h2>{{ .name }}</h2>
+          <p>{{ .role | markdownify }}</p>
+          {{ with .affiliation }}
+            <span class="hero-link">{{ . | markdownify }}</span>
+          {{ else }}{{ with (index .education 0) }}
+            <span class="hero-link">{{ .place | markdownify }}</span>
+          {{ end }}{{ end }}
+        </div>
+        <div class="hero-social-group">
+          <div class="hero-social">
+            {{ range where .social "group" "creative" }}
+              {{ $n := len .tones }}
+              {{ $stops := slice }}
+              {{ if eq $n 1 }}
+                {{ $c := printf "var(--tone-%s)" (index .tones 0) }}
+                {{ $stops = slice $c $c }}
+              {{ else }}
+                {{ $step := div 100.0 $n }}
+                {{ $gap := 5.0 }}
+                {{ range $i, $tone := .tones }}
+                  {{ $c := printf "var(--tone-%s)" $tone }}
+                  {{ $start := mul $i $step }}
+                  {{ $end := mul (add $i 1) $step }}
+                  {{ $solidEnd := sub $end $gap }}
+                  {{ if eq (add $i 1) $n }} {{ $solidEnd = 100.0 }} {{ end }}
+                  {{ $stops = $stops | append (printf "%s %.1f%%" $c $start) }}
+                  {{ $stops = $stops | append (printf "%s %.1f%%" $c $solidEnd) }}
+                {{ end }}
+              {{ end }}
+              {{ $grad := delimit $stops ", " }}
+              <a href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .name }}" class="multi-tone-btn" style="--btn-gradient: conic-gradient(from 180deg at 50% 50%, {{ $grad | safeCSS }}); --btn-color: var(--tone-{{ index .tones 0 }});">
+                <i class="{{ .icon }}"></i>
+              </a>
+            {{ end }}
+          </div>
+          <div class="hero-social-divider"></div>
+          <div class="hero-social">
+            {{ range where .social "group" "work" }}
+              {{ $n := len .tones }}
+              {{ $stops := slice }}
+              {{ if eq $n 1 }}
+                {{ $c := printf "var(--tone-%s)" (index .tones 0) }}
+                {{ $stops = slice $c $c }}
+              {{ else }}
+                {{ $step := div 100.0 $n }}
+                {{ $gap := 5.0 }}
+                {{ range $i, $tone := .tones }}
+                  {{ $c := printf "var(--tone-%s)" $tone }}
+                  {{ $start := mul $i $step }}
+                  {{ $end := mul (add $i 1) $step }}
+                  {{ $solidEnd := sub $end $gap }}
+                  {{ if eq (add $i 1) $n }} {{ $solidEnd = 100.0 }} {{ end }}
+                  {{ $stops = $stops | append (printf "%s %.1f%%" $c $start) }}
+                  {{ $stops = $stops | append (printf "%s %.1f%%" $c $solidEnd) }}
+                {{ end }}
+              {{ end }}
+              {{ $grad := delimit $stops ", " }}
+              <a href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .name }}" class="multi-tone-btn" style="--btn-gradient: conic-gradient(from 180deg at 50% 50%, {{ $grad | safeCSS }}); --btn-color: var(--tone-{{ index .tones 0 }});">
+                <i class="{{ .icon }}"></i>
+              </a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    {{ end }}
+        <div class="hero-right">
+      <div class="hero-primary">
+        <p class="eyebrow">{{ .Site.Data.profile.hero.tagline | default "Creative Research & Archives" }}</p>
+        <h1 id="hero-title">{{ .Site.Data.profile.hero.title }}</h1>
+        <p class="lede">{{ .Site.Data.profile.hero.subtitle | markdownify }}</p>
+        <a href="/cc0/" class="cc0-badge" title="Most of my work is released under CC0">
+          <i class="fab fa-creative-commons"></i>
+          <i class="fab fa-creative-commons-zero"></i>
+          <span>No rights reserved</span>
+        </a>
+        <div class="hero-cta">
+          <a class="btn primary" href="{{ "/projects/" | relURL }}">Explore projects</a>
+          <a class="btn ghost" href="{{ "/posts/" | relURL }}">Read the blog</a>
+        </div>
+        <a class="hero-scroll" href="#feed-section" onclick="event.preventDefault();document.getElementById('feed-section').scrollIntoView({behavior:'smooth',block:'start'})">Browse the feed ↓</a>
+      </div>
+    </div>
+  </section>
+  {{ with .Site.Data.profile.hero.titleEndings }}
+  <script>
+  (function(){
+    var endings={{ . | jsonify | safeJS }};
+    var h=document.getElementById('hero-title');
+    if(h&&endings.length>1){
+      var prefix={{ $.Site.Data.profile.hero.titlePrefix | jsonify | safeJS }};
+      h.textContent=prefix+endings[Math.floor(Math.random()*endings.length)];
+    }
+  })();
+  </script>
+  {{ end }}
+
+  {{ $timeline := where site.RegularPages "Section" "in" $modeData.sections }}
+  {{ $recentItems := first 5 $timeline.ByDate.Reverse }}
+  {{ if gt (len $recentItems) 0 }}
+  <div class="lately-strip">
+    <span class="lately-label">Recently</span>
+    <ul class="lately-items">
+      {{ range $recentItems }}
+        <li>
+          <a href="{{ .RelPermalink }}" class="lately-item">
+            <time class="lately-date">{{ .Date.Format "Jan 2" }}</time>
+            <span class="lately-title">{{ .Title }}</span>
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+    <a href="{{ "/timeline/" | relURL }}" class="lately-more">All activity →</a>
+  </div>
+  {{ end }}
+
+  <section class="feed" id="feed-section">
+    <div class="feed-header">
+      <p class="eyebrow">Everything, newest first</p>
+      <h2>Multi-mode feed</h2>
+    </div>
+    <div class="feed-filters">
+      {{ range $modes }}
+        <button class="mode chip" data-mode="{{ . }}" type="button">
+          {{ with index $filterIcons . }}
+            {{ partial "icon.html" (dict "name" . "size" 14) }}
+          {{ end }}
+          <span>{{ . | title }}</span>
+        </button>
+      {{ end }}
+    </div>
+    <div class="grid" id="feed">
+      {{ range first 6 (.Site.RegularPages.ByDate.Reverse) }}
+        {{ partial "card.html" . }}
+      {{ end }}
+    </div>
+    <div class="grid grid-overflow" id="feed-overflow" hidden>
+      {{ range after 6 (first 18 (.Site.RegularPages.ByDate.Reverse)) }}
+        {{ partial "card.html" . }}
+      {{ end }}
+    </div>
+    <div class="feed-empty" id="feed-empty" hidden>
+      <p class="feed-empty-msg">Nothing here yet. Check back later — or don't, I'm not your boss.</p>
+    </div>
+    <div class="feed-load-more" id="feed-load-more">
+      <button class="btn ghost" id="load-more-btn" type="button">Load more</button>
+    </div>
+  </section>
+{{ end }}
