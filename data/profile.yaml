@@ -86,37 +86,50 @@ openSourceBeliefs:
   - "My own work is CC0. If I've used someone else's library, their licence still applies, but my part is yours."
   - "Use my stuff however you want. You can sell it or change it, I don't mind. I'd like to see what you do with it."
 
+# Skills cloud: modes = colours (blend if several), level 1-4 = size.
+# 4 know it well / 3 use it a lot / 2 getting there / 1 dabbled / googled it once
+# note shows in the readout line when someone hovers or taps the word (optional).
+# skillIcons: show the optional icon next to skills that have one (false = words only)
+skillIcons: true
 skills:
-  - category: "Programming"
-    items:
-      - name: "C#"
-        icon: "devicon-csharp-plain"
-      - name: "C++"
-        icon: "devicon-cplusplus-plain"
-      - name: "Python"
-        icon: "devicon-python-plain"
-      - name: "Java"
-        icon: "devicon-java-plain"
-  - category: "Game Dev"
-    items:
-      - name: "Unity"
-        icon: "devicon-unity-plain"
-      - name: "Godot"
-        icon: "devicon-godot-plain"
-      - name: "SDL2/3"
-        icon: "devicon-sdl-plain"
-      - name: "GitHub"
-        icon: "devicon-github-plain"
-  - category: "Creative"
-    items:
-      - name: "Blender"
-        icon: "devicon-blender-original"
-      - name: "Aseprite"
-        icon: "fas fa-pencil-alt"
-      - name: "Clip Studio Paint"
-        icon: "fas fa-paint-brush"
-      - name: "FL Studio"
-        icon: "fas fa-music"
+  # code
+  - { name: "C#", modes: [code, game], level: 4, note: "Most of my Unity years", icon: "devicon-csharp-plain" }
+  - { name: "C++", modes: [code, game], level: 2, note: "I just like it", icon: "devicon-cplusplus-plain" }
+  - { name: "Python", modes: [code, research], level: 2, icon: "devicon-python-plain" }
+  - { name: "Java", modes: [code], level: 3, note: "Uni, and now again at work", icon: "devicon-java-plain" }
+  - { name: "TypeScript", modes: [code], level: 2, note: "Eh", icon: "devicon-typescript-plain" }
+  - { name: "React", modes: [code], level: 2, note: "Eh", icon: "devicon-react-original" }
+  - { name: "Git", modes: [code], level: 4, icon: "devicon-git-plain" }
+  - { name: "GitHub", modes: [code], level: 4, icon: "devicon-github-plain" }
+  - { name: "Docker", modes: [code], level: 3, icon: "devicon-docker-plain" }
+  - { name: "Linux", modes: [code], level: 3, icon: "devicon-linux-plain" }
+  - { name: "Raspberry Pi", modes: [code], level: 3, icon: "devicon-raspberrypi-line" }
+  - { name: "Hugo", modes: [code, writing], level: 2, note: "This site", icon: "devicon-hugo-plain" }
+  - { name: "Vibe coding", modes: [code], level: 3, note: "How this site happened", icon: "fas fa-wand-magic-sparkles" }
+  # games
+  - { name: "Unity", modes: [code, game], level: 4, note: "My main engine since uni", icon: "devicon-unity-plain" }
+  - { name: "Godot", modes: [code, game], level: 3, note: "Game jams mostly", icon: "devicon-godot-plain" }
+  - { name: "SDL2/3", modes: [code, game], level: 2, icon: "devicon-sdl-plain" }
+  - { name: "VR dev", modes: [code, game, research], level: 4, note: "PhD and way too many prototypes", icon: "fas fa-vr-cardboard" }
+  - { name: "Locative AR", modes: [code, game, research], level: 3, note: "LoGaCulture", icon: "fas fa-map-location-dot" }
+  - { name: "Level design", modes: [game], level: 3, icon: "fas fa-map" }
+  - { name: "Game jams", modes: [game], level: 3, icon: "fas fa-gamepad" }
+  # art
+  - { name: "Blender", modes: [art, game], level: 1, note: "I can make a cube, and move the camera, and maybe a few more things", icon: "devicon-blender-original" }
+  - { name: "Aseprite", modes: [art, game], level: 3, icon: "fas fa-pencil-alt" }
+  - { name: "Clip Studio Paint", modes: [art], level: 3, note: "My main art software", icon: "fas fa-paint-brush" }
+  # music
+  - { name: "Drums", modes: [music], level: 4, icon: "fas fa-drum" }
+  - { name: "Guitar", modes: [music], level: 3, icon: "fas fa-guitar" }
+  - { name: "Bass", modes: [music], level: 3, icon: "fas fa-guitar" }
+  - { name: "Keys", modes: [music], level: 3, icon: "fas fa-keyboard" }
+  - { name: "FL Studio", modes: [music], level: 3, icon: "fas fa-music" }
+  # research / writing
+  - { name: "User studies", modes: [research], level: 3, icon: "fas fa-users" }
+  - { name: "Thematic analysis", modes: [research, writing], level: 3, icon: "fas fa-tags" }
+  - { name: "Academic writing", modes: [research, writing], level: 3, icon: "fas fa-file-lines" }
+  - { name: "LaTeX", modes: [research, writing], level: 3, icon: "fas fa-file-code" }
+
 
 education:
   - degree: "PhD in Computer Science"
