@@ -1,11 +1,12 @@
 name: "Yoan-Daniel Malinov"
 terminalTitle: "Administrator: ioioto"
 favicon: "/img/ioioto.ico"
-tagline: "Research Fellow // Chaotic creator"
-role: "Research Fellow, [LoGaCulture Project](https://logaculture.eu)"
-location: "Southampton, UK"
+tagline: "Software Engineer // Chaotic creator"
+role: "Software Engineer, [Ada CS](https://adacomputerscience.org) @ [Raspberry Pi Foundation](https://www.raspberrypi.org)"
+affiliation: "[University of Cambridge](https://www.cst.cam.ac.uk)"
+location: "Cambridge, UK"
 availability: "Always down to build something weird"
-intro: "I don't believe in hoarding ideas. I'm a researcher and creator who jumps between too many things at once. Code, music, academic papers — I want all of it out in the open, free for everyone."
+intro: "Software engineer, ex-researcher, and someone who makes way too many things at once. Code, games, music, art, papers - I give pretty much all of it away under CC0 (where I can)."
 portraitDownload: "/resources/me_v2.1_no_timelapse.clip"
 
 hero:
@@ -58,13 +59,13 @@ social:
 
 about:
   paragraphs:
-    - "I'm a researcher who also makes games, music, and art - usually not in that order. I chase whatever idea grabs me and share the messy bits under CC0 because locked-down files on a hard drive help nobody."
+    - "I'm a software engineer (and recovering academic) who also makes games, music, and art - usually not in that order. I chase whatever idea grabs me and share the messy bits under CC0 because locked-down files on a hard drive help nobody."
     - "If my half-finished experiment helps you build your masterpiece, good. That's the whole point."
 
 workingOn:
-  - title: "LoGaCulture Project"
-    description: "Designing a locative AR game for the Avebury Stone Circle, trying to blend cultural heritage with playful interaction."
-    link: "https://www.logaculture.eu/case-study-1/"
+  - title: "Ada Computer Science"
+    description: "A free platform for students and teachers learning computer science. I work on all of it, the React frontend and the Java backend."
+    link: "https://adacomputerscience.org"
 #  - title: "reative experiments"
 #    description: "Prototyping small ideas in games, AI, interactive art, sharing them under CC0 when applicable."
 #    link: "https://github.com/ioiototm"
@@ -73,17 +74,17 @@ workingOn:
 #    link: "https://twitch.tv/ioiototm"
 
 passions:
-  - "Story-driven game design inspired by **The Stanley Parable**, **Undertale/Deltarune**, and **Outer Wilds**."
-  - "Making music with **drums**, **guitar/bass**, **keys**, **FL Studio**, and even **VR drumming** sometimes."
-  - "Prototyping **strange and playful ideas** in games and AI."
+  - "Story-driven games, especially ones that mess with you a bit, like **The Stanley Parable**, **Undertale/Deltarune** and **Outer Wilds**."
+  - "Music on whatever's nearby: **drums**, **guitar**, **bass**, **keys**, **FL Studio**, and sometimes **drums in VR**."
+  - "Weird little ideas in games and AI, mostly to see if they work."
 #  - "Exploring how virtual, augmented, and mixed reality can support curiosity and collaborative play."
 
 openSourceBeliefs:
-  - "Digital goods are infinitely replicable. Hoarding them makes no sense."
-  - "Copyright often stifles creativity. I want to fuel it."
-  - "Real learning happens when you see the messy bits, not just the polished product."
-  - "I release my personal contributions as CC0. If I use other libraries, I respect their licenses, but *my* part is yours."
-  - "Use my work. Seriously. Take it, sell it, change it. I want to see what you do with it."
+  - "Digital stuff can be copied for free, forever. Locking it up doesn't make much sense to me."
+  - "I think a lot of IP works like landlordism, just for ideas."
+  - "You learn more from seeing the messy bits than the polished end result, so I leave them in."
+  - "My own work is CC0. If I've used someone else's library, their licence still applies, but my part is yours."
+  - "Use my stuff however you want. You can sell it or change it, I don't mind. I'd like to see what you do with it."
 
 skills:
   - category: "Programming"
@@ -121,22 +122,27 @@ education:
   - degree: "PhD in Computer Science"
     place: "[University of Southampton](https://www.southampton.ac.uk)"
     years: "2019 – 2025"
-    details: "Researching multi-modal cooperative VR play and how it shapes immersion and social presence."
+    details: "Multi-modal co-located VR, and how playing together in the same room affects immersion and social presence."
   - degree: "BSc Computer Science, First Class Honours"
     place: "[University of Southampton](https://www.southampton.ac.uk)"
     years: "2016 – 2019"
-    details: "A general computer science degree with some focus on game development."
+    details: "General Computer Science, with as much game development as I could squeeze in."
   - degree: "High School Diploma - 5.89 GPA"
     place: "[Sofia High School of Mathematics (SMG)](https://smg.bg/)"
     years: "2011 – 2016"
     details: "Specialized in Mathematics, Informatics, and English."
 
 experience:
+  - role: "Software Engineer – Ada Computer Science"
+    org: "[Raspberry Pi Foundation](https://www.raspberrypi.org)"
+    years: "Jul 2026 – Present"
+    location: "Cambridge"
+    details: "Working on the Ada Computer Science platform, seconded to the University of Cambridge Department of Computer Science and Technology."
   - role: "Research Fellow – LoGaCulture"
     org: "[University of Southampton](https://www.southampton.ac.uk)"
-    years: "May 2023 – Present"
+    years: "May 2023 – May 2026"
     location: "Southampton"
-    details: "Developing and evaluating a locative game for the Avebury Stone Circle as part of LoGaCulture."
+    details: "Developed and evaluated a locative AR game for the Avebury Stone Circle as part of LoGaCulture."
   - role: "Student Demonstrator"
     org: "[University of Southampton](https://www.southampton.ac.uk)"
     years: "Oct 2019 – May 2023"
@@ -157,6 +163,5 @@ links:
 
 longform:
   paragraphs:
-    - "Zdravey! I'm Yoan. I'm a **Research Fellow** at the University of Southampton, but I don't really fit the typical academic mold (I think). I'm a **creator first** - I jump from code to music to art and rarely stop to polish things to perfection."
-    - "My 'day job' is the **LoGaCulture Project**, designing a locative AR game for the Avebury Stone Circle. It's a perfect blend: using tech to make people interact with the world (and history) in playful ways. When I'm not researching, I'm usually prototyping strange ideas in Unity, jamming on my drums, or streaming. I use AI to move faster, but the goal is always the same: **get the idea out of my head and into reality.**"
-    - "So yeah, look around. My code, my art, my music, my messy experiments. It's all here. **If you want it, take it.** You don't need to ask."
+    - "Zdravey! I'm Yoan. I make stuff, mostly for fun, and I tend to start a new thing before the last one is done, so there are more half-finished projects here than I'd like to admit. By day I'm a software engineer at the Raspberry Pi Foundation, working on Ada CS, but honestly most of what's on this site is the stuff I make in my spare time - games, music, art, little tools for one very specific problem. Before that I spent about ten years at the University of Southampton (BSc, a PhD in VR, then a postdoc making a locative AR game for the Avebury Stone Circle)."
+    - "Most of it is CC0, so if you find something useful, just take it. You don't need to ask. If you make something with it, I'd love to see it!"
