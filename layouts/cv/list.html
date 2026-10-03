@@ -528,15 +528,16 @@
     font-size: 12px;
     color: var(--text-dim);
     line-height: 1.6;
-    display: flex;
-    gap: 8px;
+    position: relative;
+    padding-left: 19px; /* arrow is pinned on the left so inline links flow inside the sentence */
   }
   .job-bullets li::before {
     content: '→';
     color: var(--accent3);
-    flex-shrink: 0;
     font-size: 11px;
-    margin-top: 1px;
+    position: absolute;
+    left: 0;
+    top: 1px;
   }
   .job-bullets a {
     color: var(--accent);
