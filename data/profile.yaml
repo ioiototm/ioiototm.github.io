@@ -70,7 +70,7 @@ about:
 
 workingOn:
   - title: "Ada Computer Science"
-    description: "A free platform for students and teachers learning computer science. I work on all of it, the React frontend and the Java backend."
+    description: "A free platform for students and teachers learning computer science. I work on all of it, the [React frontend](https://github.com/isaacphysics/isaac-react-app) and the [Java backend](https://github.com/isaacphysics/isaac-api)."
     link: "https://adacomputerscience.org"
   - title: "Marmalade"
     description: "A CC0 orange catgirl that anyone can use. I keep drawing her, making stickers and building stuff around her."
