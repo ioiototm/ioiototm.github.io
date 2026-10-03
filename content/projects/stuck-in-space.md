@@ -12,7 +12,7 @@ I created this game for my research into multi-modality and co-presence in VR - 
 
 StuckInSpace is a two player co-op game where the VR player and the second non-VR player have to help each other to fix the spaceship. The second player can either use a PC (the normal way) or a smartphone through a novel approach using one of the HTC Vive controllers that sends information about the exact position in VR space to the phone and then renders it like a "window" into the VR world.
 
-Currently there is no way to download the game as I am still working on it, but here are some screenshots of the game and the hardware setup:
+There's no download yet, I'm still working on making it downloadable. For now, here are some screenshots of the game and the hardware setup:
 
 {{< gallery folder="/img/projects/stuck-in-space" >}}
 whatDroneSees.png | What the drone sees — the VR headset and controller become an astronaut helmet and glove

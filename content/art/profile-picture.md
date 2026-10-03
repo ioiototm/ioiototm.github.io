@@ -13,6 +13,6 @@ resources:
     description: "Clip Studio Paint source file. CC0 — do whatever you want with it."
 
 ---
-My current profile picture, drawn in Clip Studio Paint. The source CSP file is attached below if you want it (not that anyone would have any use of something this specific, but still).
+My current profile picture, drawn in Clip Studio Paint. The source CSP file is attached below if you want it (not that anyone would have any use for something this specific, but still).
 
 ![Profile Picture](/img/portrait.png)

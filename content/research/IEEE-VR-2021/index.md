@@ -50,6 +50,6 @@ projects:
 - /projects/stuck-in-space
 
 ---
-This paper covers an experiment that was undertook to see the difference between two ways of adding a second player to a VR game - through either a Phone or a PC. Co-Presence and Immersion were used as variables to test for a difference, and in the end the only difference was that the VR player has more immersion. Later analysis showed that there are more nuances and that each mode has its positives and negatives that need to be taken into account when creating such an experience.
+This paper covers an experiment that was undertaken to see the difference between two ways of adding a second player to a VR game - through either a Phone or a PC. Co-Presence and Immersion were used as variables to test for a difference, and in the end the only difference was that the VR player has more immersion. Later analysis showed that there are more nuances and that each mode has its positives and negatives that need to be taken into account when creating such an experience.
 
 Screenshots: [StuckInSpace](/projects/stuck-in-space)

@@ -1,7 +1,7 @@
 ---
 
 title: Art
-description: "Sketches, renders, and CC0 stuff you can take."
+description: "Drawings and other art I've made. All CC0, so take whatever you want."
 
 
 ---

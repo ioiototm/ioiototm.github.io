@@ -1,7 +1,7 @@
 ---
 
 title: Music
-description: "Drums, synths, weird noises. All CC0."
+description: "Music I've made, mostly drums, guitar and FL Studio stuff. All CC0."
 
 
 ---

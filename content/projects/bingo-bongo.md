@@ -13,6 +13,6 @@ resources:
 
 
 ---
-This game is a local co-op multiplayer in the theme of Ying-Yang (hence the name). It was created by my friend and me for the first coursework, "Tutorial". It's supposed to be played by two people on the same keyboard, and each player controls either the white or black rectangle, which have special abilities that have to be used to help the other player complete the level.
+This game is a local co-op multiplayer in the theme of Yin-Yang (hence the name). It was created by my friend and me for the first coursework, "Tutorial". It's supposed to be played by two people on the same keyboard, and each player controls either the white or black rectangle, which have special abilities that have to be used to help the other player complete the level.
 
-You can download the game and check some more screenshot on my itch.io page for the game at [https://ioiototm.itch.io/bingo-bongo](https://ioiototm.itch.io/bingo-bongo).
+You can download the game and check some more screenshots on my itch.io page for the game at [https://ioiototm.itch.io/bingo-bongo](https://ioiototm.itch.io/bingo-bongo).

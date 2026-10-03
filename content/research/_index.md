@@ -1,7 +1,7 @@
 ---
 
 title: Research
-description: "The formal stuff. Papers, talks, PhD things."
+description: "Papers and other academic stuff from my PhD and postdoc."
 view: list
 
 
