@@ -43,6 +43,9 @@ url_source: https://eprints.soton.ac.uk/500036/
 url_video: ''
 projects:
 - /projects/stuck-in-space
+related:
+- /research/CHI-PLAY-2020
+- /research/IEEE-VR-2021
 
 ---
 My doctoral thesis, supervised by David Millard and Tom Blount at the University of Southampton. The full text is available from [Southampton ePrints](https://eprints.soton.ac.uk/500036/).

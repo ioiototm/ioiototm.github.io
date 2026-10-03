@@ -40,6 +40,9 @@ url_source: ''
 url_video: ''
 projects:
 - /projects/stuck-in-space
+related:
+- /research/IEEE-VR-2021
+- /research/phd-thesis
 
 ---
 This was part of the Doctoral Consortium of CHI PLAY in 2020, in which a short summary of the work that was done and the future direction of my PhD was discussed, as well as a short 5 minute video that was presented at the online conference.
