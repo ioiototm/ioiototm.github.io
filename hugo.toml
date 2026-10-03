@@ -71,8 +71,14 @@ enableGitInfo = false
     mode = "writing"
 
 [[menus.main]]
+  name = "CV.md"
+  url = "/cv/"
+  pre = "user"
+  weight = 8
+
+[[menus.main]]
   name = "Timeline.md"
   url = "/timeline/"
   pre = "star"
-  weight = 8
+  weight = 9
 

@@ -1,0 +1,1285 @@
+{{- $cv := site.Data.cv -}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ $cv.name }} — CV</title>
+<meta name="description" content="CV of {{ $cv.name }} — {{ $cv.title }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Syne:wght@400;600;700;800&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700;9..144,800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<style>
+  /* ═══════════════════════════════════════════════════════
+     TOKENS
+     ═══════════════════════════════════════════════════════ */
+  :root {
+    --bg: #0f1117;
+    --bg2: #161b22;
+    --bg3: #1c2128;
+    --sidebar: #13171f;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text-dim: #a8b1bc;
+    --text-dimmer: #788290;
+    --accent: #58a6ff;
+    --accent2: #f78166;
+    --accent3: #33a348;
+    --accent4: #d2a8ff;
+    --accent5: #ffa657;
+    --accent6: #79c0ff;
+    --tab-active: #0f1117;
+    --tab-inactive: #161b22;
+    --yellow: #e3b341;
+    --pink: #ff7b72;
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     RESET
+     ═══════════════════════════════════════════════════════ */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'JetBrains Mono', monospace;
+    background: var(--bg);
+    color: var(--text);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     AUDIENCE PALETTE (command palette style)
+     ═══════════════════════════════════════════════════════ */
+  .palette-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(0,0,0,0.55);
+    display: flex;
+    justify-content: center;
+    padding-top: 20vh;
+    animation: paletteFadeIn 0.15s ease;
+  }
+  .palette-overlay[hidden] { display: none; }
+  @keyframes paletteFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .palette {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    width: 480px;
+    max-width: 90vw;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+    overflow: hidden;
+    animation: paletteSlideIn 0.15s ease;
+  }
+  @keyframes paletteSlideIn {
+    from { opacity: 0; transform: translateY(-12px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .palette-header {
+    padding: 12px 16px 8px;
+    font-size: 12px;
+    color: var(--text-dim);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .palette-header kbd {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    padding: 1px 5px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    color: var(--text-dimmer);
+  }
+  .palette-prompt {
+    padding: 14px 16px 6px;
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 500;
+  }
+  .palette-sub {
+    padding: 0 16px 10px;
+    font-size: 11px;
+    color: var(--text-dimmer);
+    line-height: 1.5;
+  }
+  .palette-options {
+    padding: 4px 6px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .palette-opt {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.08s;
+    border: 1px solid transparent;
+  }
+  .palette-opt:hover, .palette-opt:focus {
+    background: rgba(88, 166, 255, 0.08);
+    border-color: var(--accent);
+    outline: none;
+  }
+  .palette-opt-icon {
+    font-size: 20px;
+    width: 28px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .palette-opt-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .palette-opt-desc {
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-top: 1px;
+  }
+  .palette-skip {
+    padding: 6px 16px 12px;
+    text-align: center;
+  }
+  .palette-skip a {
+    font-size: 10px;
+    color: var(--text-dimmer);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .palette-skip a:hover { color: var(--text-dim); }
+
+  /* Quick audience badge in status bar */
+  .statusbar-audience {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(0,0,0,0.85);
+    cursor: pointer;
+    padding: 0 8px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: background 0.1s;
+    border-right: 1px solid rgba(0,0,0,0.1);
+  }
+  .statusbar-audience:hover { background: rgba(0,0,0,0.12); }
+
+  /* ═══════════════════════════════════════════════════════
+     TITLE BAR
+     ═══════════════════════════════════════════════════════ */
+  .titlebar {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 0 16px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .titlebar-title {
+    flex: 1;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .win-controls {
+    display: flex;
+    margin-left: auto;
+    height: 100%;
+  }
+  .win-btn {
+    width: 46px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    font-size: 10px;
+    cursor: default;
+    transition: background 0.1s;
+  }
+  .win-btn:hover { background: rgba(255,255,255,0.06); }
+  .win-btn svg { width: 10px; height: 10px; fill: none; stroke: var(--text-dim); stroke-width: 1; }
+  .win-close:hover { background: #c42b1c; }
+  .win-close:hover svg { stroke: #fff; }
+
+  /* ═══════════════════════════════════════════════════════
+     STATUS BAR PRINT BUTTON
+     ═══════════════════════════════════════════════════════ */
+  .statusbar-print {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: rgba(0,0,0,0.7);
+    cursor: pointer;
+    padding: 0 6px;
+    height: 100%;
+    transition: background 0.1s;
+  }
+  .statusbar-print:hover {
+    background: rgba(0,0,0,0.12);
+  }
+  .statusbar-print svg {
+    width: 12px;
+    height: 12px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+  }
+  .print-iframe { position: absolute; width: 0; height: 0; border: 0; visibility: hidden; }
+
+  /* ═══════════════════════════════════════════════════════
+     TABS
+     ═══════════════════════════════════════════════════════ */
+  .tabs {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    overflow-x: auto;
+    flex-shrink: 0;
+    scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    padding: 8px 20px;
+    font-size: 12px;
+    color: var(--text-dim);
+    border-right: 1px solid var(--border);
+    cursor: pointer;
+    white-space: nowrap;
+    background: var(--tab-inactive);
+    border-top: 2px solid transparent;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .tab:hover { color: var(--text); background: var(--bg3); }
+  .tab.active {
+    background: var(--tab-active);
+    color: var(--text);
+    border-top-color: var(--accent);
+  }
+  .tab-icon { font-size: 11px; opacity: 0.7; }
+
+  /* ═══════════════════════════════════════════════════════
+     MAIN LAYOUT
+     ═══════════════════════════════════════════════════════ */
+  .editor-layout {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     SIDEBAR
+     ═══════════════════════════════════════════════════════ */
+  .sidebar {
+    width: 220px;
+    background: var(--sidebar);
+    border-right: 1px solid var(--border);
+    flex-shrink: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+  .sidebar-section { padding: 4px 0; }
+  .sidebar-header {
+    padding: 6px 12px;
+    font-size: 10px;
+    color: var(--text-dimmer);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .sidebar-header::before {
+    content: '▾';
+    font-size: 10px;
+    color: var(--text-dimmer);
+  }
+  .sidebar-item {
+    padding: 4px 12px 4px 28px;
+    font-size: 12px;
+    color: var(--text-dim);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.1s;
+    border-left: 2px solid transparent;
+  }
+  .sidebar-item:hover {
+    background: var(--bg3);
+    color: var(--text);
+  }
+  .sidebar-item.active {
+    background: rgba(88, 166, 255, 0.1);
+    color: var(--accent);
+    border-left-color: var(--accent);
+  }
+  .sidebar-item .file-icon { font-size: 12px; width: 14px; }
+  .sidebar-item--print {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .sidebar-item--print:hover {
+    background: rgba(88, 166, 255, 0.12);
+    color: #79c0ff;
+  }
+  .sidebar-item--print svg {
+    width: 12px;
+    height: 12px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    flex-shrink: 0;
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     CONTENT AREA
+     ═══════════════════════════════════════════════════════ */
+  .content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+  .section {
+    padding: 40px 48px;
+    border-bottom: 1px solid var(--border);
+    animation: fadeIn 0.3s ease;
+    scroll-margin-top: 0;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     SECTION HEADERS
+     ═══════════════════════════════════════════════════════ */
+  .section-label {
+    font-size: 10px;
+    color: var(--text-dimmer);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════════════ */
+  .hero { padding: 48px 48px 40px; }
+  .hero-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .hero-name span.hl { color: var(--accent); }
+  .hero-title {
+    font-size: 14px;
+    color: #e0d8cf;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+  }
+  .hero-tagline {
+    font-size: 13px;
+    color: var(--text-dim);
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+  .hero-tagline .hl { color: var(--accent); }
+  .hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .hero-link {
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 11px;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .hero-link i {
+    font-size: 13px;
+    width: 14px;
+    text-align: center;
+    color: var(--accent3);
+    transition: color 0.15s;
+  }
+  .hero-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(88, 166, 255, 0.05);
+  }
+  .hero-link:hover i {
+    color: var(--accent);
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     COMMENT
+     ═══════════════════════════════════════════════════════ */
+  .comment {
+    color: var(--text-dimmer);
+    font-size: 12px;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+  .comment::before { content: '// '; }
+
+  /* ═══════════════════════════════════════════════════════
+     EXPERIENCE
+     ═══════════════════════════════════════════════════════ */
+  .job {
+    margin-bottom: 36px;
+    padding-left: 20px;
+    border-left: 2px solid var(--border);
+    transition: border-color 0.2s;
+  }
+  .job:hover { border-left-color: var(--accent); }
+  .job-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+  .job-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .job-org {
+    font-size: 12px;
+    color: var(--accent3);
+    margin-bottom: 8px;
+  }
+  .job-date {
+    font-size: 11px;
+    color: var(--text-dimmer);
+    white-space: nowrap;
+    padding: 2px 8px;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+  }
+  .job-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .job-bullets li {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    display: flex;
+    gap: 8px;
+  }
+  .job-bullets li::before {
+    content: '→';
+    color: var(--accent3);
+    flex-shrink: 0;
+    font-size: 11px;
+    margin-top: 1px;
+  }
+  .job-bullets a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .job-bullets a:hover {
+    border-bottom-color: var(--accent);
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     PROJECTS
+     ═══════════════════════════════════════════════════════ */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+  }
+  .project-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 18px;
+    transition: all 0.2s;
+    cursor: default;
+  }
+  .project-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(88, 166, 255, 0.08);
+  }
+  .project-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .project-badge {
+    font-size: 9px;
+    padding: 2px 6px;
+    border-radius: 100px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+  }
+  .badge-shipped { background: rgba(51, 163, 72, 0.15); color: var(--accent3); border: 1px solid rgba(51, 163, 72, 0.3); }
+  .badge-research { background: rgba(210, 168, 255, 0.15); color: var(--accent4); border: 1px solid rgba(210, 168, 255, 0.3); }
+  .badge-oss { background: rgba(88, 166, 255, 0.15); color: var(--accent); border: 1px solid rgba(88, 166, 255, 0.3); }
+  .badge-hardware { background: rgba(255, 166, 87, 0.15); color: var(--accent5); border: 1px solid rgba(255, 166, 87, 0.3); }
+  .badge-personal { background: rgba(247, 129, 102, 0.15); color: var(--accent2); border: 1px solid rgba(247, 129, 102, 0.3); }
+  .project-desc {
+    font-size: 11px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .tech-tag {
+    font-size: 10px;
+    padding: 2px 7px;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    color: var(--text-dimmer);
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     SKILLS
+     ═══════════════════════════════════════════════════════ */
+  .skills-block { margin-bottom: 24px; }
+  .skills-category {
+    font-size: 11px;
+    color: var(--accent3);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .skills-category::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .skill-pill {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    background: var(--bg2);
+    transition: all 0.15s;
+  }
+  .skill-pill:hover {
+    color: var(--text);
+    border-color: var(--accent);
+    background: rgba(88, 166, 255, 0.05);
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     PUBLICATIONS
+     ═══════════════════════════════════════════════════════ */
+  .pub {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    transition: border-color 0.2s;
+  }
+  .pub:hover { border-color: var(--accent); }
+  .pub-title {
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+  .pub-meta {
+    font-size: 11px;
+    color: var(--text-dimmer);
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .pub-meta span { color: var(--accent3); }
+  .pub-title a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .pub-title a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+  .pub-doi a {
+    color: var(--accent);
+    text-decoration: none;
+    font-family: var(--font);
+    font-size: 10px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  .pub-doi a:hover { opacity: 1; }
+  .pub.forthcoming {
+    border-style: dashed;
+  }
+  .pub.forthcoming .pub-title {
+    color: var(--text-dimmer);
+    font-style: italic;
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     TEACHING
+     ═══════════════════════════════════════════════════════ */
+  .teaching-row {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 8px 0;
+    font-size: 12px;
+  }
+  .teaching-entry { border-bottom: 1px solid var(--border); }
+  .teaching-entry:last-child { border-bottom: none; }
+  .teaching-code {
+    color: var(--accent3);
+    white-space: nowrap;
+    font-weight: 500;
+    min-width: 100px;
+  }
+  .teaching-name {
+    color: var(--text-dim);
+    flex: 1;
+  }
+  .teaching-role {
+    color: var(--text-dimmer);
+    font-size: 11px;
+    white-space: nowrap;
+  }
+  .teaching-detail {
+    color: var(--text-dimmer);
+    font-size: 11px;
+    line-height: 1.5;
+    padding: 0 0 6px 0;
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     STATUS BAR
+     ═══════════════════════════════════════════════════════ */
+  .statusbar {
+    background: var(--accent);
+    padding: 0 16px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+  }
+  .statusbar-item {
+    font-size: 11px;
+    color: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .statusbar-item strong { color: #000; }
+  .statusbar-right {
+    margin-left: auto;
+    display: flex;
+    gap: 16px;
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     MINIMAP
+     ═══════════════════════════════════════════════════════ */
+  .minimap {
+    width: 60px;
+    background: var(--bg2);
+    border-left: 1px solid var(--border);
+    flex-shrink: 0;
+    opacity: 0.4;
+    overflow: hidden;
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     SCROLLBAR
+     ═══════════════════════════════════════════════════════ */
+  .content::-webkit-scrollbar { width: 8px; }
+  .content::-webkit-scrollbar-track { background: transparent; }
+  .content::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+  .sidebar::-webkit-scrollbar { width: 4px; }
+  .sidebar::-webkit-scrollbar-thumb { background: var(--border); }
+
+  /* ═══════════════════════════════════════════════════════
+     CURSOR
+     ═══════════════════════════════════════════════════════ */
+  .cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--accent);
+    animation: blink 1.2s step-end infinite;
+    vertical-align: middle;
+    margin-left: 2px;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     RESPONSIVE
+     ═══════════════════════════════════════════════════════ */
+  @media (max-width: 768px) {
+    .sidebar { display: none; }
+    .minimap { display: none; }
+    .section { padding: 24px 20px; }
+    .hero { padding: 24px 20px; }
+    .hero-name { font-size: 28px; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .teaching-row { flex-wrap: wrap; gap: 4px; }
+    .teaching-role { width: 100%; }
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     PRINT — minimal fallback (real print lives at /cv/print/)
+     ═══════════════════════════════════════════════════════ */
+  @media print {
+    .titlebar, .tabs, .sidebar, .minimap, .statusbar, .cursor { display: none !important; }
+    body { height: auto; overflow: visible; background: #fff; color: #1f2328; font-size: 9pt; }
+    .editor-layout { display: block; overflow: visible; }
+    .content { overflow: visible; }
+    .section { padding: 10px 0; border-bottom: 1px solid #ddd; animation: none; page-break-inside: avoid; }
+    .section-label { display: none; }
+    .hero { padding: 0 0 6px; }
+    .hero-name { font-size: 22pt; }
+    .hero-name span.hl { color: #1f2328; }
+    .hero-link { border: none; padding: 0; font-size: 9pt; }
+    .project-card:hover { transform: none; box-shadow: none; }
+    @page { size: A4; margin: 1.5cm; }
+  }
+</style>
+</head>
+<body>
+
+<!-- AUDIENCE SELECTOR (VS Code Command Palette) -->
+<div class="palette-overlay" id="audiencePalette" hidden>
+  <div class="palette">
+    <div class="palette-header">
+      <span>></span> Select viewer profile <kbd>↑↓</kbd> <kbd>Enter</kbd>
+    </div>
+    <div class="palette-prompt">Who's reading this CV?</div>
+    <div class="palette-sub">This reorders sections to show you the most relevant content first.<br>You can change this anytime from the status bar.</div>
+    <div class="palette-options" id="paletteOptions">
+      {{- range $key, $a := $cv.audiences }}
+      <div class="palette-opt" tabindex="0" data-audience="{{ $key }}" onclick="selectAudience('{{ $key }}')">
+        <span class="palette-opt-icon">{{ $a.icon }}</span>
+        <div>
+          <div class="palette-opt-label">{{ $a.label }}</div>
+          <div class="palette-opt-desc">{{ $a.desc }}</div>
+        </div>
+      </div>
+      {{- end }}
+    </div>
+    <div class="palette-skip"><a onclick="selectAudience('industry')">skip — use default order</a></div>
+  </div>
+</div>
+
+<!-- TITLE BAR -->
+<div class="titlebar" aria-hidden="true">
+  <div class="titlebar-title">{{ lower $cv.name | replaceRE " " "-" }} — cv.md — Visual Studio Code</div>
+  <div class="win-controls">
+    <div class="win-btn"><svg viewBox="0 0 10 1"><path d="M0 0.5h10"/></svg></div>
+    <div class="win-btn"><svg viewBox="0 0 10 10"><rect x="0.5" y="0.5" width="9" height="9" rx="0"/></svg></div>
+    <a href="/" class="win-btn win-close" title="Back to ioioto.me"><svg viewBox="0 0 10 10"><path d="M1 1l8 8M9 1l-8 8"/></svg></a>
+  </div>
+</div>
+
+<!-- TABS -->
+<nav class="tabs" aria-label="CV sections">
+  {{- range $i, $tab := $cv.tabs }}
+  <div class="tab{{ if eq $i 0 }} active{{ end }}" onclick="scrollToSection('{{ $tab.section }}')" role="tab">
+    <span class="tab-icon">{{ $tab.icon }}</span> {{ $tab.label }}
+  </div>
+  {{- end }}
+</nav>
+
+<!-- EDITOR LAYOUT -->
+<div class="editor-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" aria-label="File explorer">
+    <div class="sidebar-section">
+      <div class="sidebar-header">EXPLORER</div>
+      <div class="sidebar-header" style="padding-left: 20px; font-size:9px;">📁 YOAN-CV</div>
+      {{- range $i, $f := $cv.sidebar.files }}
+      <div class="sidebar-item{{ if eq $i 0 }} active{{ end }}" onclick="scrollToSection('{{ $f.section }}')">
+        <span class="file-icon">{{ $f.icon }}</span> {{ $f.label }}
+      </div>
+      {{- end }}
+      <div class="sidebar-item sidebar-item--print" onclick="printCV()" title="Print CV (Ctrl+P)">
+        <svg viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z"/></svg> print-cv.pdf
+      </div>
+    </div>
+
+    <div class="sidebar-section" style="margin-top: 16px;">
+      <div class="sidebar-header">LINKS</div>
+      {{- range $cv.sidebar.externalLinks }}
+      <div class="sidebar-item" onclick="window.open('{{ .url }}', '_blank', 'noopener')">
+        <span class="file-icon">{{ .icon }}</span> {{ .label }} ↗
+      </div>
+      {{- end }}
+    </div>
+  </aside>
+
+  <!-- CONTENT -->
+  <div class="content" id="content">
+
+    <!-- HERO -->
+    <div class="section" id="hero">
+      <div class="hero">
+        <div class="section-label">// about.md</div>
+        <div class="hero-name">{{ $cv.firstName }} <span class="hl">{{ $cv.lastName }}</span><span class="cursor"></span></div>
+        <div class="hero-title">{{ $cv.title }}</div>
+        <div class="hero-tagline">
+          {{ $cv.tagline | markdownify }}
+          <br><br>
+          {{ $cv.credentials }}
+        </div>
+        <div class="hero-links">
+          {{- range $cv.links }}
+          {{ if .url }}
+          <a href="{{ .url }}"{{ if .external }} target="_blank" rel="noopener"{{ end }} class="hero-link">{{ with .icon }}<i class="{{ . }}"></i>{{ end }}{{ .label }}</a>
+          {{- else }}
+          <span class="hero-link" style="cursor:default;">{{ with .icon }}<i class="{{ . }}"></i>{{ end }}{{ .label }}</span>
+          {{- end }}
+          {{- end }}
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section" id="experience">
+      <div class="section-label">// experience.ts</div>
+      <div class="section-title">Experience</div>
+
+      {{ with $cv.experience.comment }}<div class="comment">{{ . }}</div>{{ end }}
+
+      {{- range $cv.experience.jobs }}
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <div class="job-title">{{ .title }}</div>
+            <div class="job-org">{{ .org }}</div>
+          </div>
+          <div class="job-date">{{ .date }}</div>
+        </div>
+        <ul class="job-bullets">
+          {{- range .bullets }}
+          <li>{{ . | safeHTML }}</li>
+          {{- end }}
+        </ul>
+      </div>
+      {{- end }}
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="section" id="projects">
+      <div class="section-label">// projects.json</div>
+      <div class="section-title">Projects</div>
+
+      {{ with $cv.projects.comment }}<div class="comment">{{ . }}</div>{{ end }}
+
+      <div class="projects-grid">
+        {{- range $cv.projects.items }}
+        <div class="project-card">
+          <div class="project-name">
+            {{ .name }}
+            <span class="project-badge badge-{{ .badge }}">{{ .badgeLabel }}</span>
+          </div>
+          <div class="project-desc">{{ .desc }}</div>
+          <div class="project-tech">
+            {{- range .tech }}
+            <span class="tech-tag">{{ . }}</span>
+            {{- end }}
+          </div>
+        </div>
+        {{- end }}
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section" id="skills">
+      <div class="section-label">// skills.config</div>
+      <div class="section-title">Technologies</div>
+
+      {{- range $cv.skills }}
+      <div class="skills-block">
+        <div class="skills-category">{{ .category }}</div>
+        <div class="skills-tags">
+          {{- range .items }}
+          <span class="skill-pill">{{ . }}</span>
+          {{- end }}
+        </div>
+      </div>
+      {{- end }}
+    </div>
+
+    <!-- PUBLICATIONS -->
+    <div class="section" id="publications">
+      <div class="section-label">// papers.bib</div>
+      <div class="section-title">Publications</div>
+
+      {{- range $cv.publications }}
+      <div class="pub{{ if .forthcoming }} forthcoming{{ end }}">
+        <div class="pub-title">
+          {{- if .url }}
+            <a href="{{ .url }}">{{ .title }}</a>
+          {{- else if .doi }}
+            <a href="https://doi.org/{{ .doi }}" target="_blank" rel="noopener">{{ .title }}</a>
+          {{- else }}
+            {{ .title }}
+          {{- end }}
+        </div>
+        <div class="pub-meta">
+          {{ with .authors }}{{ . }}{{ end }}
+          {{ with .venue }}<span>{{ . }}</span>{{ end }}
+          {{- /* doi shown separately below */ -}}
+          {{ with .meta }}{{ . }}{{ end }}
+        </div>
+        {{- with .doi }}
+        <div class="pub-doi"><a href="https://doi.org/{{ . }}" target="_blank" rel="noopener">doi:{{ . }}</a></div>
+        {{- end }}
+      </div>
+      {{- end }}
+    </div>
+
+    <!-- TEACHING -->
+    <div class="section" id="teaching">
+      <div class="section-label">// teaching.log</div>
+      <div class="section-title">Teaching</div>
+
+      {{- range $cv.teaching }}
+      <div class="teaching-entry">
+        <div class="teaching-row">
+          <span class="teaching-code">{{ .code }}</span>
+          <span class="teaching-name">{{ .name }}</span>
+          <span class="teaching-role">{{ .role }}</span>
+        </div>
+        {{- with .detail }}
+        <div class="teaching-detail">{{ . }}</div>
+        {{- end }}
+      </div>
+      {{- end }}
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section" id="education">
+      <div class="section-label">// education.md</div>
+      <div class="section-title">Education</div>
+
+      {{- range $cv.education }}
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <div class="job-title">{{ .title }}</div>
+            <div class="job-org">{{ .org }}</div>
+          </div>
+          <div class="job-date">{{ .date }}</div>
+        </div>
+        <ul class="job-bullets">
+          {{- range .bullets }}
+          <li>{{ . | safeHTML }}</li>
+          {{- end }}
+        </ul>
+      </div>
+      {{- end }}
+    </div>
+
+  </div><!-- end content -->
+
+  <!-- MINIMAP -->
+  <div class="minimap" aria-hidden="true"></div>
+
+</div><!-- end editor layout -->
+
+<!-- HIDDEN PRINT IFRAME -->
+<iframe id="printFrame" class="print-iframe" src="/cv/print/" title="Printable CV"></iframe>
+
+<!-- STATUS BAR -->
+<div class="statusbar" aria-hidden="true">
+  <div class="statusbar-item">⎇ <strong>main</strong></div>
+  <div class="statusbar-item">📄 cv.md</div>
+  <div class="statusbar-item">✓ No errors</div>
+  <div class="statusbar-right">
+    <span class="statusbar-audience" id="statusAudience" onclick="showPalette()" title="Change viewer profile"></span>
+    <button class="statusbar-print" onclick="printCV()" title="Print CV as PDF">
+      <svg viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z"/></svg>
+      Print / PDF
+    </button>
+    <div class="statusbar-item">UTF-8</div>
+    <div class="statusbar-item">Markdown</div>
+    <div class="statusbar-item">{{ $cv.location }}</div>
+  </div>
+</div>
+
+<script>
+  // ── Audience profiles (from YAML) ──────────────────────
+  var AUDIENCES = {
+    {{- range $key, $a := $cv.audiences }}
+    '{{ $key }}': {
+      label: '{{ $a.label }}',
+      icon: '{{ $a.icon }}',
+      sections: [{{ range $i, $s := $a.sections }}{{ if $i }}, {{ end }}'{{ $s }}'{{ end }}]
+    },
+    {{- end }}
+  };
+
+  var SIDEBAR_MAP = {
+    {{- range $cv.sidebar.files }}
+    '{{ .section }}': { icon: '{{ .icon }}', label: '{{ .label }}' },
+    {{- end }}
+  };
+
+  // ── State ──────────────────────────────────────────────
+  var currentAudience = null;
+
+  // ── Audience selection ─────────────────────────────────
+  function selectAudience(key) {
+    currentAudience = key;
+    try { sessionStorage.setItem('cv-audience', key); } catch(e) {}
+    hidePalette();
+    applyAudience(key);
+  }
+
+  function applyAudience(key) {
+    var profile = AUDIENCES[key];
+    if (!profile) return;
+
+    // Reorder content sections
+    var content = document.getElementById('content');
+    var sections = profile.sections;
+    sections.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) content.appendChild(el);
+    });
+
+    // Reorder sidebar items
+    var sidebarContainer = document.querySelector('.sidebar-section:first-child');
+    if (sidebarContainer) {
+      var headers = sidebarContainer.querySelectorAll('.sidebar-header');
+      var printBtn = sidebarContainer.querySelector('.sidebar-item--print');
+
+      // Remove existing items (keep headers and print)
+      var oldItems = sidebarContainer.querySelectorAll('.sidebar-item:not(.sidebar-item--print)');
+      oldItems.forEach(function(el) { el.remove(); });
+
+      // Recreate in order
+      var insertBefore = printBtn || null;
+      sections.forEach(function(id) {
+        var info = SIDEBAR_MAP[id];
+        if (!info) return;
+        var div = document.createElement('div');
+        div.className = 'sidebar-item';
+        div.setAttribute('onclick', "scrollToSection('" + id + "')");
+        div.innerHTML = '<span class="file-icon">' + info.icon + '</span> ' + info.label;
+        sidebarContainer.insertBefore(div, insertBefore);
+      });
+    }
+
+    // Update status bar
+    var badge = document.getElementById('statusAudience');
+    if (badge) badge.textContent = profile.icon + ' ' + profile.label;
+
+    // Update print iframe to pass audience
+    var frame = document.getElementById('printFrame');
+    if (frame) {
+      var printUrl = '/cv/print/?for=' + encodeURIComponent(key);
+      if (frame.src.indexOf('?for=') === -1 || frame.src.indexOf('for=' + key) === -1) {
+        frame.src = printUrl;
+      }
+    }
+
+    // Scroll to top
+    if (content) content.scrollTop = 0;
+  }
+
+  // ── Palette show/hide ──────────────────────────────────
+  function showPalette() {
+    var overlay = document.getElementById('audiencePalette');
+    overlay.removeAttribute('hidden');
+    var firstOpt = overlay.querySelector('.palette-opt');
+    if (firstOpt) firstOpt.focus();
+  }
+
+  function hidePalette() {
+    var overlay = document.getElementById('audiencePalette');
+    overlay.setAttribute('hidden', '');
+  }
+
+  // ── Keyboard navigation for palette ────────────────────
+  document.getElementById('audiencePalette').addEventListener('keydown', function(e) {
+    var opts = Array.from(document.querySelectorAll('.palette-opt'));
+    var idx = opts.indexOf(document.activeElement);
+    if (e.key === 'ArrowDown') { e.preventDefault(); opts[(idx + 1) % opts.length].focus(); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); opts[(idx - 1 + opts.length) % opts.length].focus(); }
+    else if (e.key === 'Enter' && idx >= 0) { e.preventDefault(); opts[idx].click(); }
+    else if (e.key === 'Escape') { hidePalette(); }
+  });
+
+  // Click outside palette to dismiss
+  document.getElementById('audiencePalette').addEventListener('click', function(e) {
+    if (e.target === this) selectAudience('industry');
+  });
+
+  // ── Print ──────────────────────────────────────────────
+  function printCV() {
+    var frame = document.getElementById('printFrame');
+    if (frame && frame.contentWindow) {
+      frame.contentWindow.print();
+    }
+  }
+
+  // Intercept Ctrl+P to print the editorial CV
+  document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+      e.preventDefault();
+      printCV();
+    }
+  });
+
+  // ── Scroll / navigation ───────────────────────────────
+  function scrollToSection(id) {
+    var el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+
+    // update sidebar active state
+    var sidebarItems = document.querySelectorAll('.sidebar-item:not(.sidebar-item--print)');
+    sidebarItems.forEach(function(item) {
+      var onclick = item.getAttribute('onclick') || '';
+      item.classList.toggle('active', onclick.indexOf("'" + id + "'") !== -1);
+    });
+
+    // update tabs
+    var tabSections = [{{ range $i, $t := $cv.tabs }}{{ if $i }}, {{ end }}'{{ $t.section }}'{{ end }}];
+    var tabs = document.querySelectorAll('.tab');
+    tabs.forEach(function(tab, i) {
+      tab.classList.toggle('active', tabSections[i] === id);
+    });
+  }
+
+  // track scroll position to update sidebar
+  (function() {
+    var content = document.getElementById('content');
+    if (!content) return;
+
+    content.addEventListener('scroll', function() {
+      var sects = content.querySelectorAll('.section[id]');
+      var current = '';
+      sects.forEach(function(s) {
+        if (content.scrollTop >= s.offsetTop - 100) current = s.id;
+      });
+      if (!current) return;
+
+      var sidebarItems = document.querySelectorAll('.sidebar-item:not(.sidebar-item--print)');
+      sidebarItems.forEach(function(item) {
+        var onclick = item.getAttribute('onclick') || '';
+        item.classList.toggle('active', onclick.indexOf("'" + current + "'") !== -1);
+      });
+    });
+  })();
+
+  // ── Init: check URL param or sessionStorage ────────────
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var fromUrl = params.get('for');
+    var stored = null;
+    try { stored = sessionStorage.getItem('cv-audience'); } catch(e) {}
+
+    if (fromUrl && AUDIENCES[fromUrl]) {
+      selectAudience(fromUrl);
+    } else if (stored && AUDIENCES[stored]) {
+      selectAudience(stored);
+    } else {
+      // Show the palette
+      showPalette();
+    }
+  })();
+</script>
+
+</body>
+</html>

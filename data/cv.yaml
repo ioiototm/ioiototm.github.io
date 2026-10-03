@@ -1,0 +1,266 @@
+name: "Yoan-Daniel Malinov"
+firstName: "Yoan-Daniel"
+lastName: "Malinov"
+title: "Game Developer · XR Researcher"
+tagline: |
+  I build games and study how people play them. Most recently shipped an AR heritage game at the 5,000-year-old stone circle of Avebury as part of the LoGaCulture project.
+credentials: "PhD in Computer Science · First-Class BSc · University of Southampton"
+statement: ""
+location: "Southampton, UK"
+email: "ioiototm@gmail.com"
+
+# ── Audience profiles ─────────────────────────────────────
+# Each profile defines the section order for that viewer type.
+# Section IDs must match the template section IDs.
+audiences:
+  academic:
+    label: "Academic"
+    desc: "Teaching Fellow · Lecturer · Research Fellow"
+    icon: "🎓"
+    sections: ["hero", "education", "teaching", "publications", "experience", "projects", "skills"]
+  industry:
+    label: "Industry"
+    desc: "Games · XR · Creative Tech · Software"
+    icon: "🎮"
+    sections: ["hero", "experience", "projects", "skills", "education", "publications", "teaching"]
+  rse:
+    label: "Research Software"
+    desc: "RSE · Research Engineer · Technical"
+    icon: "🔧"
+    sections: ["hero", "experience", "projects", "skills", "publications", "teaching", "education"]
+
+links:
+  - label: "ioiototm@gmail.com"
+    url: "mailto:ioiototm@gmail.com"
+    icon: "fa-solid fa-envelope"
+  - label: "ioioto.me"
+    url: "https://ioioto.me"
+    icon: "fa-solid fa-globe"
+    external: true
+  - label: "github.com/ioiototm"
+    url: "https://github.com/ioiototm"
+    icon: "fa-brands fa-github"
+    external: true
+  - label: "linkedin"
+    url: "https://linkedin.com/in/yoan-daniel-malinov"
+    icon: "fa-brands fa-linkedin"
+    external: true
+  - label: "itch.io"
+    url: "https://ioiototm.itch.io"
+    icon: "fa-brands fa-itch-io"
+    external: true
+  - label: "scholar"
+    url: "https://scholar.google.co.uk/citations?user=1hptFVEAAAAJ"
+    icon: "ai ai-google-scholar"
+    external: true
+  - label: "orcid"
+    url: "https://orcid.org/0000-0003-3263-3614"
+    icon: "ai ai-orcid"
+    external: true
+  - label: "Southampton, UK"
+    icon: "fa-solid fa-location-dot"
+
+sidebar:
+  files:
+    - icon: "👤"
+      label: "about.md"
+      section: "hero"
+    - icon: "💼"
+      label: "experience.ts"
+      section: "experience"
+    - icon: "🎮"
+      label: "projects.json"
+      section: "projects"
+    - icon: "⚙️"
+      label: "skills.config"
+      section: "skills"
+    - icon: "📚"
+      label: "papers.bib"
+      section: "publications"
+    - icon: "🎓"
+      label: "teaching.log"
+      section: "teaching"
+    - icon: "🏛️"
+      label: "education.md"
+      section: "education"
+  externalLinks:
+    - icon: "🌐"
+      label: "ioioto.me"
+      url: "https://ioioto.me"
+    - icon: "🐙"
+      label: "github"
+      url: "https://github.com/ioiototm"
+    - icon: "💼"
+      label: "linkedin"
+      url: "https://linkedin.com/in/yoan-daniel-malinov"
+    - icon: "📖"
+      label: "scholar"
+      url: "https://scholar.google.co.uk/citations?user=1hptFVEAAAAJ"
+
+tabs:
+  - icon: "📄"
+    label: "cv.md"
+    section: "hero"
+  - icon: "💼"
+    label: "experience.ts"
+    section: "experience"
+  - icon: "🎮"
+    label: "projects.json"
+    section: "projects"
+  - icon: "⚙️"
+    label: "skills.config"
+    section: "skills"
+  - icon: "📚"
+    label: "papers.bib"
+    section: "publications"
+
+experience:
+  comment: "A Research Fellow and Lead Developer for the Ages of Avebury locative AR heritage game"
+  jobs:
+    - title: "Research Fellow"
+      org: "LoGaCulture Project · University of Southampton"
+      date: "2023 - May 2026"
+      bullets:
+        - 'Built and shipped <a href="https://github.com/LoGaCulture/Ages-of-Avebury">Ages of Avebury</a> - a locative AR heritage game deployed at Avebury World Heritage Site with the National Trust. ~390 downloads across iOS and Android since launch.'
+        - 'Designed and built <a href="https://github.com/LoGaCulture/LUTE-Server">LUTE Server</a> - a production .NET backend handling JWT auth, game telemetry, shared persistent state, and an admin panel.'
+        - 'Contributed AR implementation, documentation, and bug fixes to <a href="https://github.com/LoGaCulture/LUTE">LUTE</a> - the open source Unity toolkit powering the project.'
+        - 'Collaborated across a four-country EU Horizon consortium (Portugal, Ireland, Germany and UK), contributing to joint publications and shared research outputs.'
+        
+    - title: "PhD Researcher"
+      org: "University of Southampton"
+      date: "2019 - 2025"
+      bullets:
+        - "Designed, built, and iterated StuckInSpace from scratch in Unity - an asymmetric VR co-op game used as a research instrument across VR headset, PC, and phone modalities."
+        - "Conducted two user studies with groups of participants playing the game - handling recruitment, ethics approval, session facilitation, and data analysis."
+        - "Implemented real-time cross-device audio streaming (FMOD over WiFi) for the second experiment."
+        - "Conducted a systematic review of immersion and embodiment literature to ground the research framework."
+        - "Published at IEEE VR 2021 and CHI PLAY 2020 Doctoral Consortium."
+
+    - title: "Android Developer - Internship"
+      org: "University of Southampton"
+      date: "Jul - Sep 2018"
+      bullets:
+        - "Built an Android computer vision application in a team of two to detect and extract text from inventory labels - used for warehouse management and stock tracking."
+        - "Implemented the label detection and OCR pipeline, working through camera calibration, perspective correction, and text recognition."
+
+projects:
+  comment: "Selected shipped work and research projects"
+  items:
+    - name: "Ages of Avebury"
+      badge: "shipped"
+      badgeLabel: "SHIPPED"
+      desc: "Locative AR heritage game deployed at a UNESCO World Heritage Site with the National Trust. Players explore Avebury across three time periods - Neolithic, Medieval, present day. Uses real-time ML silhouette detection to generate personalised 3D standing stones from player body shapes, which persist on the server and appear for future visitors. ~390 downloads across iOS and Android since launch."
+      tech: ["Unity 6", "AR Foundation", "MediaPipe", "TensorFlow Lite", "Marching Cubes", "Mapbox", "iOS", "Android"]
+
+    - name: "LUTE Server"
+      badge: "shipped"
+      badgeLabel: "SHIPPED"
+      desc: "Production backend API for LoGaCulture. Handles game logging, shared variables, JWT authentication, admin panel, and the persistent stone shape social system. Deployed in production across Southampton and Bournemouth research teams."
+      tech: [".NET", "SQLite", "JWT", "Docker", "REST API"]
+
+    - name: "LUTE"
+      badge: "oss"
+      badgeLabel: "OPEN SOURCE"
+      desc: "Unity toolkit/engine for creating narrative location-based heritage games. Contributed AR implementation, documentation, and bug fixes."
+      tech: ["Unity", "C#", "AR"]
+
+    - name: "StuckInSpace"
+      badge: "research"
+      badgeLabel: "RESEARCH"
+      desc: "Asymmetric VR co-op game built for PhD research. Two user studies exploring how different modalities (VR headset, PC, phone) affect immersion and co-presence. Real-time audio streaming over WiFi between devices using FMOD."
+      tech: ["Unity", "VR", "C#", "FMOD", "Multi-modal"]
+
+#    - name: "PicoDisplay + PicoServer"
+#      badge: "hardware"
+#      badgeLabel: "HARDWARE"
+#      desc: "Custom hardware system monitor. Firmware running on a Raspberry Pi Pico displays real-time CPU/GPU temps, RAM, and network stats on a physical screen. Companion C# server polls hardware via LibreHardwareMonitorLib."
+#      tech: ["C", "C#", "Raspberry Pi", "TFT_eSPI", "Arduino IDE"]#
+
+#    - name: "Govee BLE Light Control"
+#      badge: "personal"
+#      badgeLabel: "PERSONAL"
+#      desc: "Reverse engineered the Govee BLE protocol to control smart lights via an MQTT broker. Runs persistently on a Raspberry Pi Zero W, staying connected to avoid the latency of reconnecting on every command."
+#      tech: ["JavaScript", "Node.js", "BLE", "MQTT", "Raspberry Pi"]
+
+#    - name: "AI Streaming Pipeline"
+#      badge: "personal"
+#      badgeLabel: "PERSONAL"
+#      desc: "Real-time event-driven system orchestrating LLM inference, text-to-speech, and avatar animation for live streaming. Integrates Twitch, OBS, and StreamerBot APIs with pluggable TTS/STT engines, ChromaDB-backed conversational memory with importance scoring and embedding retrieval, and a full message-to-speech-to-animation pipeline."
+#      tech: ["Python", "Ollama", "ChromaDB", "Whisper", "Chatterbox", "REST API", "WebSocket"]
+
+skills:
+  - category: "Game & XR"
+    items: ["Unity (C#)", "AR Foundation / ARCore / ARKit", "Godot", "Forge Networking", "FMOD", "OpenXR", "Mapbox", "GPS / Geofencing"]
+  - category: "Languages"
+    items: ["C#", "C/C++", "Python", "Java", "R", "JavaScript", "HTML / CSS"]
+  - category: "ML / AI"
+    items: ["MediaPipe", "TensorFlow Lite", "Ollama", "llama.cpp", "RAG / ChromaDB", "LoRA Fine-Tuning", "Stable Diffusion / ComfyUI", "TTS / STT (Whisper)", "Prompt Engineering"]
+  - category: "Backend & Infra"
+    items: ["Linux", "nginx", ".NET", "SQLite", "Docker", "Git", "GitHub Actions", "Cloudflare Pages", "Cloudflare Tunnels", "Pocketbase"]
+  - category: "Mobile Publishing"
+    items: ["App Store (iOS)", "Google Play (Android)", "TestFlight"]
+  - category: "Hardware & IoT"
+    items: ["Raspberry Pi", "Home Assistant", "Portainer", "BLE / Bluetooth", "MQTT", "Arduino IDE"]
+  - category: "Research"
+    items: ["Experiment Design", "Mixed Methods", "User Studies", "Thematic Analysis", "Systematic Reviews", "Ethics (ERGO)", "R (Statistics)", "LaTeX / Overleaf", "NVivo"]
+
+publications:
+  - title: "LUTE: A Hypertextual Mixed Reality Game Engine"
+    authors: "Brett, Jack · Hargood, Charlie · Millard, David · Malinov, Yoan-Daniel · Rimmington, Bob"
+    venue: "HT '25: Proceedings of the 36th ACM Conference on Hypertext and Social Media"
+    year: 2025
+    doi: "10.1145/3720553.3746666"
+  - title: "Characterising Embodiment in Multi-Modal Play for Virtual Reality"
+    authors: "Malinov, Yoan-Daniel"
+    venue: "University of Southampton · PhD Thesis"
+    year: 2025
+    type: thesis
+    url: "/research/phd-thesis/"
+    eprints: "https://eprints.soton.ac.uk/500036/"
+  - title: "The Ethics of Mixed Reality Games"
+    authors: "Millard, David · Packer, Heather · Jordan, James · Hewitt, Sarah · Malinov, Yoan · Rogers, Neil"
+    venue: "ACM Games: Research and Practice, Vol. 2, No. 3, Article 28"
+    year: 2024
+    doi: "10.1145/3675806"
+  - title: "StuckInSpace: Exploring the Difference Between Two Different Mediums of Play in a Multi-Modal Virtual Reality Game"
+    authors: "Malinov, Yoan-Daniel · Millard, David E. · Blount, Tom"
+    venue: "IEEE VR 2021"
+    year: 2021
+    doi: "10.1109/VR50410.2021.00074"
+    url: "/research/ieee-vr-2021/"
+  - title: "Characterising the Benefits of Multi-Modal Play in Virtual Reality"
+    authors: "Malinov, Yoan-Daniel"
+    venue: "CHI PLAY 2020 Doctoral Consortium"
+    year: 2020
+    doi: "10.1145/3383668.3419955"
+    url: "/research/chi-play-2020/"
+
+
+teaching:
+  - code: "COMP6259"
+    name: "Advanced Games - VR/AR/XR Lecture"
+    role: "Lecturer · 2023-2026"
+    detail: "Designed and delivered a VR/AR/XR lecture for the new Advanced Game Design course and given annually for three years."
+  - code: "COMP3218"
+    name: "Game Design and Development"
+    role: "Demonstrator + Marker · 2019-2026"
+    detail: "Assessed and marked student game projects across multiple years - evaluating design, implementation, and providing detailed feedback."
+  - code: "COMP1202 · COMP1204 · COMP1206 · COMP1203"
+    name: "Lab Demonstrator"
+    role: "2019-2023"
+    detail: "Supported 50-100+ students per session across Python, Java, databases, and electronics labs - live debugging, environment setup, explaining concepts on the fly, and adapting to different skill levels. Provided remote support via Discord during the pandemic."
+
+education:
+  - title: "PhD - Computer Science"
+    org: "University of Southampton"
+    date: "2019 - 2025"
+    bullets:
+      - 'Thesis: <a href="/research/phd-thesis/">Characterising Embodiment in Multi-Modal Play for Virtual Reality.</a>'
+      - "Conducted two user studies separated by a systematic review of immersion and embodiment literature."
+      - "Explored how different play modalities (VR headset, PC, phone) affect immersion, presence, and co-presence."
+  - title: "BSc - Computer Science · First Class Honours"
+    org: "University of Southampton"
+    date: "2016 - 2019"
+    bullets:
+      - "Final Year Project: Co-presence and awareness in virtual/mixed reality games"
+      - "Built a VR game in Unity exploring co-presence across modalities - directly leading to PhD research."

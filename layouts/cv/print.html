@@ -1,0 +1,627 @@
+{{- $cv := site.Data.cv -}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ $cv.name }} — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700;9..144,800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --cream: #FAF6F1;
+    --cream-dark: #EAE0D3;
+    --charcoal: #2E2419;
+    --charcoal-light: #4A3D30;
+    --warm-gray: #8A7E71;
+    --warm-gray-light: #C5BBB0;
+    --terracotta: #C4572A;
+    --terracotta-dark: #A34520;
+    --terracotta-light: #FCEEE8;
+    --terracotta-wash: #F8DDD1;
+    --sage: #4E7A66;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --page-max: 780px;
+  }
+
+  html { font-size: 15.5px; scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--charcoal);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--terracotta); text-decoration: none; }
+  a:hover { color: var(--terracotta-dark); }
+  ::selection { background: var(--terracotta-wash); }
+
+  .page {
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: 3rem 2rem 3rem;
+  }
+
+  /* ---- HEADER ---- */
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem 2rem;
+    align-items: start;
+    margin-bottom: 1.8rem;
+  }
+
+  .name {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .name-first {
+    font-weight: 300;
+    color: var(--charcoal-light);
+  }
+
+  .tagline {
+    font-size: 0.88rem;
+    color: var(--warm-gray);
+    margin-top: 0.25rem;
+  }
+
+  .links {
+    text-align: right;
+    font-size: 0.8rem;
+    line-height: 1.8;
+  }
+
+  .links a { color: var(--charcoal-light); white-space: nowrap; }
+  .links a:hover { color: var(--terracotta); }
+  .links span { color: var(--warm-gray-light); margin: 0 0.15rem; }
+
+  /* ---- ABOUT ---- */
+  .about {
+    font-size: 0.92rem;
+    color: var(--charcoal-light);
+    line-height: 1.65;
+    margin-bottom: 2rem;
+    max-width: 620px;
+  }
+
+  .highlight {
+    background: linear-gradient(to top, var(--terracotta-wash) 35%, transparent 35%);
+    padding: 0 2px;
+  }
+
+  /* ---- FEATURED ---- */
+  .featured {
+    background: var(--terracotta-light);
+    border-radius: 0;
+    border-left: 3px solid var(--terracotta);
+    padding: 1.5rem 1.8rem;
+    margin-bottom: 2.2rem;
+  }
+
+  .featured-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.3rem 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .featured-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+
+  .featured-sub {
+    font-size: 0.78rem;
+    color: var(--warm-gray);
+  }
+
+  .featured-body {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    margin-bottom: 0.8rem;
+  }
+
+  .featured-body p + p { margin-top: 0.4rem; }
+
+  .featured-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  /* ---- TAGS ---- */
+  .tag {
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    border: 1px solid var(--warm-gray-light);
+    border-radius: 3px;
+    font-size: 0.72rem;
+    color: var(--charcoal-light);
+    white-space: nowrap;
+  }
+
+  .tag--a {
+    border-color: var(--terracotta);
+    color: var(--terracotta);
+  }
+
+  /* ---- SECTIONS ---- */
+  .section { margin-bottom: 2.2rem; }
+
+  .sh {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .sh::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--cream-dark);
+  }
+
+  /* ---- EXPERIENCE ---- */
+  .job + .job { margin-top: 1.5rem; }
+
+  .job-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0 1rem;
+  }
+
+  .job-title { font-weight: 600; font-size: 0.92rem; }
+  .job-dates { font-size: 0.78rem; color: var(--warm-gray); }
+  .job-org { font-size: 0.82rem; color: var(--warm-gray); margin-bottom: 0.35rem; }
+
+  .bullets { list-style: none; padding: 0; }
+  .bullets li {
+    padding-left: 0.9rem;
+    position: relative;
+    font-size: 0.85rem;
+    line-height: 1.55;
+    margin-bottom: 0.2rem;
+  }
+  .bullets li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--terracotta);
+    font-weight: 600;
+  }
+
+  /* ---- PROJECTS GRID ---- */
+  .proj-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.1rem 1.8rem;
+  }
+
+  .proj-name { font-weight: 600; font-size: 0.85rem; }
+  .proj-desc { font-size: 0.8rem; color: var(--charcoal-light); line-height: 1.5; margin-bottom: 0.2rem; }
+  .proj-tags { display: flex; flex-wrap: wrap; gap: 0.2rem; }
+  .proj-tags .tag { font-size: 0.65rem; padding: 0.05rem 0.35rem; }
+
+  /* ---- TECH ---- */
+  .tech-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 0.4rem;
+    margin-bottom: 0.55rem;
+  }
+
+  .tech-label {
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: var(--warm-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    min-width: 80px;
+    flex-shrink: 0;
+  }
+
+  .tech-row .tag { font-size: 0.73rem; }
+
+  /* ---- PUBLICATIONS ---- */
+  .pub {
+    font-size: 0.84rem;
+    line-height: 1.55;
+    margin-bottom: 0.5rem;
+  }
+  .pub em { font-family: var(--font-display); font-weight: 600; font-style: italic; }
+  .pub-venue { color: var(--warm-gray); }
+  .pub-note { font-size: 0.8rem; color: var(--warm-gray); font-style: italic; }
+  .pub a { color: inherit; text-decoration: none; }
+  .pub a em { border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+  .pub a:hover em { border-bottom-color: var(--terracotta); }
+  .pub-doi { font-size: 0.75rem; color: var(--warm-gray); }
+  .pub-doi a { color: var(--terracotta); }
+
+  /* ---- EDUCATION & TEACHING ---- */
+  .edu-teach {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .edu-degree { font-weight: 600; font-size: 0.88rem; }
+  .edu-school { font-size: 0.8rem; color: var(--warm-gray); }
+  .edu-detail { font-size: 0.78rem; color: var(--warm-gray); font-style: italic; }
+  .edu-item + .edu-item { margin-top: 0.5rem; }
+
+  .teaching-list { list-style: none; padding: 0; }
+  .teaching-list li {
+    padding-left: 0.9rem;
+    position: relative;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin-bottom: 0.15rem;
+  }
+  .teaching-list li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--sage);
+    font-weight: 600;
+  }
+  .teaching-detail-print {
+    font-size: 0.75rem;
+    color: #666;
+    margin: -0.05rem 0 0.25rem 0.9rem;
+  }
+
+  /* ---- FOOTER ---- */
+  .footer {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--cream-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 0.75rem;
+    color: var(--warm-gray);
+  }
+  .footer-links { display: flex; gap: 0.8rem; list-style: none; }
+
+  /* ---- BACK LINK ---- */
+  .back-link {
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--warm-gray);
+    text-decoration: none;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.15s;
+  }
+  .back-link:hover { color: var(--terracotta); }
+
+  /* ---- PRINT BUTTON ---- */
+  .print-btn {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background: var(--charcoal);
+    color: var(--cream);
+    border: none;
+    padding: 0.55rem 1.1rem;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+    z-index: 100;
+  }
+  .print-btn:hover { background: var(--terracotta); }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 640px) {
+    .header { grid-template-columns: 1fr; }
+    .links { text-align: left; }
+    .proj-grid { grid-template-columns: 1fr; }
+    .edu-teach { grid-template-columns: 1fr; gap: 1rem; }
+    .tech-row { flex-direction: column; gap: 0.2rem; }
+    .tech-label { min-width: unset; }
+  }
+
+  /* ---- ANIMATIONS ---- */
+  @media (prefers-reduced-motion: no-preference) {
+    .page > * { animation: fadeIn 0.35s ease both; }
+    .page > :nth-child(2) { animation-delay: 0.04s; }
+    .page > :nth-child(3) { animation-delay: 0.08s; }
+    .page > :nth-child(4) { animation-delay: 0.12s; }
+    .page > :nth-child(5) { animation-delay: 0.14s; }
+    .page > :nth-child(6) { animation-delay: 0.16s; }
+    .page > :nth-child(7) { animation-delay: 0.18s; }
+    .page > :nth-child(8) { animation-delay: 0.20s; }
+    .page > :nth-child(9) { animation-delay: 0.22s; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+
+  /* ---- PRINT ---- */
+  @media print {
+    html { font-size: 9pt; }
+    body { background: white; color: #1a1a1a; }
+    .page { max-width: 100%; padding: 0; }
+    .print-btn, .back-link { display: none; }
+
+    .name { font-size: 16pt; }
+    .tagline { font-size: 8pt; }
+    .links { font-size: 7pt; }
+
+    .about { font-size: 8.5pt; margin-bottom: 0.6rem; }
+    .highlight { background: none; }
+
+    .featured {
+      background: none;
+      border: none;
+      border-left: 2px solid #bbb;
+      border-radius: 0;
+      padding: 0.6rem 0.8rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .featured-title { font-size: 10.5pt; }
+    .featured-sub { font-size: 7pt; }
+    .featured-body { font-size: 8pt; line-height: 1.4; }
+    .featured-tags .tag { font-size: 6.5pt; }
+
+    .section { margin-bottom: 0.6rem; }
+    .sh { font-size: 9.5pt; margin-bottom: 0.35rem; }
+
+    .job-title { font-size: 8.5pt; }
+    .job-org, .job-dates { font-size: 7pt; }
+    .bullets li { font-size: 7.5pt; line-height: 1.35; margin-bottom: 0.05rem; }
+
+    .proj-name { font-size: 7.5pt; }
+    .proj-desc { font-size: 7pt; }
+    .proj-tags .tag { font-size: 5.5pt; }
+
+    .tech-label { font-size: 6.5pt; }
+    .tech-row .tag { font-size: 6.5pt; }
+
+    .pub { font-size: 7.5pt; }
+    .pub-note { font-size: 7pt; }
+
+    .edu-degree { font-size: 8pt; }
+    .edu-school, .edu-detail { font-size: 7pt; }
+    .teaching-list li { font-size: 7pt; }
+
+    .footer { font-size: 6.5pt; }
+
+    .job, .pub { page-break-inside: avoid; }
+    .sh { page-break-after: avoid; }
+
+    @page { size: A4; margin: 1.4cm 1.6cm; }
+  }
+</style>
+</head>
+<body>
+
+<a href="/cv/" class="back-link">← Back to CV</a>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div>
+      <h1 class="name"><span class="name-first">{{ $cv.firstName }}</span> {{ $cv.lastName }}</h1>
+      <p class="tagline">{{ $cv.title }}</p>
+    </div>
+    <div class="links">
+      {{- range $i, $l := $cv.links -}}
+        {{- if $l.url -}}
+          {{- if $i }} <span>/</span> {{ end -}}
+          <a href="{{ $l.url }}">{{ $l.label }}</a>
+        {{- end -}}
+      {{- end -}}
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <p class="about">
+    {{ with $cv.statement }}{{ . | plainify | safeHTML }}{{ else }}{{ $cv.tagline | plainify | safeHTML }}{{ end }}
+    <br>{{ $cv.credentials }}
+  </p>
+
+  <!-- FEATURED: First project (Ages of Avebury) -->
+  {{- $featured := index $cv.projects.items 0 -}}
+  <div class="featured">
+    <div class="featured-top">
+      <h2 class="featured-title">{{ $featured.name }}</h2>
+      <span class="featured-sub">Locative AR Heritage Game · iOS &amp; Android · Lead Developer</span>
+    </div>
+    <div class="featured-body">
+      <p>{{ $featured.desc }}</p>
+    </div>
+    <div class="featured-tags">
+      {{- range $i, $t := $featured.tech }}
+      <span class="tag{{ if lt $i 2 }} tag--a{{ end }}">{{ $t }}</span>
+      {{- end }}
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="print-experience">
+    <h2 class="sh">Experience</h2>
+    {{- range $cv.experience.jobs }}
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">{{ .title }}</span>
+        <span class="job-dates">{{ .date }}</span>
+      </div>
+      <p class="job-org">{{ .org }}</p>
+      <ul class="bullets">
+        {{- range .bullets }}
+        <li>{{ . | safeHTML }}</li>
+        {{- end }}
+      </ul>
+    </div>
+    {{- end }}
+  </section>
+
+  <!-- PROJECTS (skip first — it's featured above) -->
+  <section class="section" id="print-projects">
+    <h2 class="sh">Projects</h2>
+    <div class="proj-grid">
+      {{- range $i, $p := $cv.projects.items }}
+      {{- if gt $i 0 }}
+      <div>
+        <p class="proj-name">{{ $p.name }}</p>
+        <p class="proj-desc">{{ $p.desc }}</p>
+        <div class="proj-tags">
+          {{- range $p.tech }}
+          <span class="tag">{{ . }}</span>
+          {{- end }}
+        </div>
+      </div>
+      {{- end }}
+      {{- end }}
+    </div>
+  </section>
+
+  <!-- TECHNOLOGIES -->
+  <section class="section" id="print-skills">
+    <h2 class="sh">Technologies</h2>
+    {{- range $cv.skills }}
+    <div class="tech-row">
+      <span class="tech-label">{{ .category }}</span>
+      {{- range .items }}
+      <span class="tag">{{ . }}</span>
+      {{- end }}
+    </div>
+    {{- end }}
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section class="section" id="print-publications">
+    <h2 class="sh">Publications</h2>
+    {{- range $cv.publications }}
+    {{- if not .forthcoming }}
+    <div class="pub">
+      {{- if .url }}
+        <a href="{{ .url }}"><em>"{{ .title }}"</em></a>
+      {{- else if .doi }}
+        <a href="https://doi.org/{{ .doi }}" target="_blank" rel="noopener"><em>"{{ .title }}"</em></a>
+      {{- else }}
+        <em>"{{ .title }}"</em>
+      {{- end }}
+      {{ with .authors }}{{ . }}{{ end }}
+      {{ with .venue }}<span class="pub-venue">— {{ . }}</span>{{ end }}
+      {{- with .doi }}
+      <span class="pub-doi"><a href="https://doi.org/{{ . }}" target="_blank" rel="noopener">doi:{{ . }}</a></span>
+      {{- end }}
+    </div>
+    {{- else }}
+    <p class="pub-note">{{ .title }}</p>
+    {{- end }}
+    {{- end }}
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section" id="print-education">
+    <h2 class="sh">Education</h2>
+    {{- range $cv.education }}
+    <div class="edu-item">
+      <p class="edu-degree">{{ .title }}</p>
+      <p class="edu-school">{{ .org }}{{ with .date }} · {{ . }}{{ end }}</p>
+      {{- range .bullets }}
+      <p class="edu-detail">{{ . | safeHTML }}</p>
+      {{- end }}
+    </div>
+    {{- end }}
+  </section>
+
+  <!-- TEACHING -->
+  <section class="section" id="print-teaching">
+    <h2 class="sh">Teaching</h2>
+    <ul class="teaching-list">
+      {{- range $cv.teaching }}
+      <li>{{ .name }} ({{ .code }}) — {{ .role }}</li>
+      {{- with .detail }}<p class="teaching-detail-print">{{ . }}</p>{{- end }}
+      {{- end }}
+    </ul>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>{{ now.Format "January 2006" }}</span>
+    <ul class="footer-links">
+      {{- range $cv.links -}}
+        {{- if and .url .external }}
+        <li><a href="{{ .url }}">{{ .label }}</a></li>
+        {{- end -}}
+      {{- end }}
+    </ul>
+  </footer>
+
+</div>
+
+<button class="print-btn" onclick="window.print()">Print / PDF</button>
+
+<script>
+  // Audience-aware section reordering for print
+  var AUDIENCES = {
+    {{- range $key, $a := $cv.audiences }}
+    '{{ $key }}': [{{ range $i, $s := $a.sections }}{{ if $i }}, {{ end }}'{{ $s }}'{{ end }}],
+    {{- end }}
+  };
+
+  // Map CV section IDs to print section IDs
+  var SECTION_MAP = {
+    'experience': 'print-experience',
+    'projects': 'print-projects',
+    'skills': 'print-skills',
+    'publications': 'print-publications',
+    'education': 'print-education',
+    'teaching': 'print-teaching'
+  };
+
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var audience = params.get('for');
+    if (!audience || !AUDIENCES[audience]) return;
+
+    var page = document.querySelector('.page');
+    var footer = document.querySelector('.footer');
+    var order = AUDIENCES[audience];
+
+    // Reorder sections (skip 'hero' — header/about/featured stay at top)
+    order.forEach(function(id) {
+      var printId = SECTION_MAP[id];
+      if (!printId) return;
+      var el = document.getElementById(printId);
+      if (el) page.insertBefore(el, footer);
+    });
+  })();
+</script>
+
+</body>
+</html>
