@@ -1,6 +1,7 @@
 title = "ioioto"
 baseURL = "/"
 languageCode = "en"
+timeZone = "Europe/London"
 theme = "multimode-studio-hugo-theme"
 [pagination]
   pagerSize = 12
