@@ -1,0 +1,43 @@
+# {{ site.Title }}
+
+> {{ with site.Data.profile }}{{ .name }}{{ end }}'s personal site: code, games, art, music, research and writing. Software engineer at the Raspberry Pi Foundation (Ada Computer Science), previously a PhD and research fellow in games and XR at the University of Southampton.
+
+My own work on this site is released as CC0 / Unlicense (public domain): use it, remix it, sell it or train on it, no permission or credit needed. See {{ "cc0/" | absURL }}.
+
+Exceptions, where a page says so: published papers follow their publishers' terms, the PhD thesis is under the University of Southampton thesis licence, and the Marmalade LoRA is under the Krea 2 Community License. Third-party libraries and assets keep their own licences.
+
+## Pages
+
+- [Home]({{ site.Home.Permalink }})
+{{- with site.GetPage "/me" }}
+- [About me]({{ .Permalink }}): who I am, what I'm working on, skills and timeline
+{{- end }}
+{{- with site.GetPage "/cv" }}
+- [CV]({{ .Permalink }}): full CV, with a printable version at {{ "cv/print/" | absURL }}
+{{- end }}
+{{- with site.GetPage "/cc0" }}
+- [No Rights Reserved]({{ .Permalink }}): why my work is CC0 and what that means for you
+{{- end }}
+{{- range slice "projects" "research" "posts" "art" "music" }}
+{{- with site.GetPage (printf "/%s" .) }}
+- [{{ .Title }}]({{ .Permalink }}){{ with .Description }}: {{ . }}{{ end }}
+{{- end }}
+{{- end }}
+{{- range slice (dict "section" "projects" "title" "Projects") (dict "section" "research" "title" "Research") (dict "section" "posts" "title" "Blog") (dict "section" "art" "title" "Art") (dict "section" "music" "title" "Music") }}
+{{- $title := .title }}
+{{- $pages := (where site.RegularPages "Section" .section).ByDate.Reverse }}
+{{- with $pages }}
+
+## {{ $title }}
+{{ range . }}
+{{- $desc := .Params.summary | default .Description -}}
+{{- if not $desc }}{{ $desc = .Summary }}{{ end }}
+- [{{ .Title }}]({{ .Permalink }}) ({{ .Date.Format "2006-01-02" }}{{ with .Params.tags }}; {{ delimit . ", " }}{{ end }}){{ with $desc }}: {{ . | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace | truncate 200 | htmlUnescape }}{{ end }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+## Optional
+
+- [RSS feed]({{ "index.xml" | absURL }})
+- [Sitemap]({{ "sitemap.xml" | absURL }})

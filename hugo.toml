@@ -1,8 +1,19 @@
 title = "ioioto"
-baseURL = "/"
+baseURL = "https://ioioto.me/"
 languageCode = "en"
 timeZone = "Europe/London"
+enableRobotsTXT = true
 theme = "multimode-studio-hugo-theme"
+# llms.txt: a plain-text map of the site for AI tools and agents (layouts/index.llms.txt)
+[outputFormats.llms]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  notAlternative = true
+
+[outputs]
+  home = ["html", "rss", "llms"]
+
 [pagination]
   pagerSize = 12
 
